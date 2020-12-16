@@ -3,6 +3,7 @@
 - [介绍](README.md)
 - [项目部署](DEPLOY.md)
 - [小程序教程](WXAPP.md)
+- [linux常用命令](Linux.md)
 - [git 教程](GIT.md)
 - [每日一题]()
   - [前端性能优化](每日一题/20201126.md)

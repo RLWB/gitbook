@@ -299,6 +299,222 @@
 <pre><code class="lang-shell">$ git config --global user.name &quot;rlwb&quot;
 $ git config --global user.email rlwb@gmail.com
 </code></pre>
+<h4 id="&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;">&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</h4>
+<pre><code class="lang-shell">$ git config --list
+</code></pre>
+<h4 id="git-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">Git &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h4>
+<p>&#x4E00;&#x822C;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x514B;&#x9686; Git &#x8D44;&#x6E90;&#x4F5C;&#x4E3A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x5728;&#x514B;&#x9686;&#x7684;&#x8D44;&#x6E90;&#x4E0A;&#x6DFB;&#x52A0;&#x6216;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5176;&#x4ED6;&#x4EBA;&#x4FEE;&#x6539;&#x4E86;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x8D44;&#x6E90;&#x3002;</li>
+<li>&#x5728;&#x63D0;&#x4EA4;&#x524D;&#x67E5;&#x770B;&#x4FEE;&#x6539;&#x3002;</li>
+<li>&#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x3002;</li>
+<li>&#x5728;&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x53EF;&#x4EE5;&#x64A4;&#x56DE;&#x63D0;&#x4EA4;&#x5E76;&#x518D;&#x6B21;&#x4FEE;&#x6539;&#x5E76;&#x63D0;&#x4EA4;&#x3002;</li>
+</ul>
+<p><img src="imgs/git-process.png" alt=""></p>
+<h4 id="git&#x5DE5;&#x4F5C;&#x533A;&#x3001;&#x6682;&#x5B58;&#x533A;&#x548C;&#x7248;&#x672C;&#x5E93;">Git&#x5DE5;&#x4F5C;&#x533A;&#x3001;&#x6682;&#x5B58;&#x533A;&#x548C;&#x7248;&#x672C;&#x5E93;</h4>
+<h5 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;">&#x57FA;&#x672C;&#x6982;&#x5FF5;</h5>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x7406;&#x89E3;&#x4E0B; Git &#x5DE5;&#x4F5C;&#x533A;&#x3001;&#x6682;&#x5B58;&#x533A;&#x548C;&#x7248;&#x672C;&#x5E93;&#x6982;&#x5FF5;&#xFF1A;</p>
+<ul>
+<li><strong>&#x5DE5;&#x4F5C;&#x533A;&#xFF1A;</strong>&#x5C31;&#x662F;&#x4F60;&#x5728;&#x7535;&#x8111;&#x91CC;&#x80FD;&#x770B;&#x5230;&#x7684;&#x76EE;&#x5F55;&#x3002;</li>
+<li><strong>&#x6682;&#x5B58;&#x533A;&#xFF1A;</strong>&#x82F1;&#x6587;&#x53EB; stage &#x6216; index&#x3002;&#x4E00;&#x822C;&#x5B58;&#x653E;&#x5728; <strong>.git</strong> &#x76EE;&#x5F55;&#x4E0B;&#x7684; index &#x6587;&#x4EF6;&#xFF08;.git/index&#xFF09;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x628A;&#x6682;&#x5B58;&#x533A;&#x6709;&#x65F6;&#x4E5F;&#x53EB;&#x4F5C;&#x7D22;&#x5F15;&#xFF08;index&#xFF09;&#x3002;</li>
+<li><strong>&#x7248;&#x672C;&#x5E93;&#xFF1A;</strong>&#x5DE5;&#x4F5C;&#x533A;&#x6709;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x76EE;&#x5F55; <strong>.git</strong>&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x7B97;&#x5DE5;&#x4F5C;&#x533A;&#xFF0C;&#x800C;&#x662F; Git &#x7684;&#x7248;&#x672C;&#x5E93;&#x3002;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x56FE;&#x5C55;&#x793A;&#x4E86;&#x5DE5;&#x4F5C;&#x533A;&#x3001;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x7684;&#x6682;&#x5B58;&#x533A;&#x548C;&#x7248;&#x672C;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<p><img src="imgs/git02.jpg" alt=""></p>
+<ul>
+<li>&#x56FE;&#x4E2D;&#x5DE6;&#x4FA7;&#x4E3A;&#x5DE5;&#x4F5C;&#x533A;&#xFF0C;&#x53F3;&#x4FA7;&#x4E3A;&#x7248;&#x672C;&#x5E93;&#x3002;&#x5728;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x6807;&#x8BB0;&#x4E3A; &quot;index&quot; &#x7684;&#x533A;&#x57DF;&#x662F;&#x6682;&#x5B58;&#x533A;&#xFF08;stage/index&#xFF09;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A; &quot;master&quot; &#x7684;&#x662F; master &#x5206;&#x652F;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x3002;</li>
+<li>&#x56FE;&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6B64;&#x65F6; &quot;HEAD&quot; &#x5B9E;&#x9645;&#x662F;&#x6307;&#x5411; master &#x5206;&#x652F;&#x7684;&#x4E00;&#x4E2A;&quot;&#x6E38;&#x6807;&quot;&#x3002;&#x6240;&#x4EE5;&#x56FE;&#x793A;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#x51FA;&#x73B0; HEAD &#x7684;&#x5730;&#x65B9;&#x53EF;&#x4EE5;&#x7528; master &#x6765;&#x66FF;&#x6362;&#x3002;</li>
+<li>&#x56FE;&#x4E2D;&#x7684; objects &#x6807;&#x8BC6;&#x7684;&#x533A;&#x57DF;&#x4E3A; Git &#x7684;&#x5BF9;&#x8C61;&#x5E93;&#xFF0C;&#x5B9E;&#x9645;&#x4F4D;&#x4E8E; &quot;.git/objects&quot; &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;&#x521B;&#x5EFA;&#x7684;&#x5404;&#x79CD;&#x5BF9;&#x8C61;&#x53CA;&#x5185;&#x5BB9;&#x3002;</li>
+<li>&#x5F53;&#x5BF9;&#x5DE5;&#x4F5C;&#x533A;&#x4FEE;&#x6539;&#xFF08;&#x6216;&#x65B0;&#x589E;&#xFF09;&#x7684;&#x6587;&#x4EF6;&#x6267;&#x884C; <strong>git add</strong> &#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x6682;&#x5B58;&#x533A;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x88AB;&#x66F4;&#x65B0;&#xFF0C;&#x540C;&#x65F6;&#x5DE5;&#x4F5C;&#x533A;&#x4FEE;&#x6539;&#xFF08;&#x6216;&#x65B0;&#x589E;&#xFF09;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x88AB;&#x5199;&#x5165;&#x5230;&#x5BF9;&#x8C61;&#x5E93;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x800C;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;ID&#x88AB;&#x8BB0;&#x5F55;&#x5728;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6587;&#x4EF6;&#x7D22;&#x5F15;&#x4E2D;&#x3002;</li>
+<li>&#x5F53;&#x6267;&#x884C;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#xFF08;git commit&#xFF09;&#x65F6;&#xFF0C;&#x6682;&#x5B58;&#x533A;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x5199;&#x5230;&#x7248;&#x672C;&#x5E93;&#xFF08;&#x5BF9;&#x8C61;&#x5E93;&#xFF09;&#x4E2D;&#xFF0C;master &#x5206;&#x652F;&#x4F1A;&#x505A;&#x76F8;&#x5E94;&#x7684;&#x66F4;&#x65B0;&#x3002;&#x5373; master &#x6307;&#x5411;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x5C31;&#x662F;&#x63D0;&#x4EA4;&#x65F6;&#x6682;&#x5B58;&#x533A;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x3002;</li>
+<li>&#x5F53;&#x6267;&#x884C; <strong>git reset HEAD</strong> &#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x6682;&#x5B58;&#x533A;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x4F1A;&#x88AB;&#x91CD;&#x5199;&#xFF0C;&#x88AB; master &#x5206;&#x652F;&#x6307;&#x5411;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x6240;&#x66FF;&#x6362;&#xFF0C;&#x4F46;&#x662F;&#x5DE5;&#x4F5C;&#x533A;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#x3002;</li>
+<li>&#x5F53;&#x6267;&#x884C; <strong>git rm --cached <file></file></strong> &#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x5220;&#x9664;&#x6587;&#x4EF6;&#xFF0C;&#x5DE5;&#x4F5C;&#x533A;&#x5219;&#x4E0D;&#x505A;&#x51FA;&#x6539;&#x53D8;&#x3002;</li>
+<li>&#x5F53;&#x6267;&#x884C; <strong>git checkout .</strong> &#x6216;&#x8005; <strong>git checkout -- <file></file></strong> &#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x4F1A;&#x7528;&#x6682;&#x5B58;&#x533A;&#x5168;&#x90E8;&#x6216;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x66FF;&#x6362;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x5F88;&#x5371;&#x9669;&#xFF0C;&#x4F1A;&#x6E05;&#x9664;&#x5DE5;&#x4F5C;&#x533A;&#x4E2D;&#x672A;&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6539;&#x52A8;&#x3002;</li>
+<li>&#x5F53;&#x6267;&#x884C; <strong>git checkout HEAD .</strong> &#x6216;&#x8005; <strong>git checkout HEAD <file></file></strong> &#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x4F1A;&#x7528; HEAD &#x6307;&#x5411;&#x7684; master &#x5206;&#x652F;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x6216;&#x8005;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x66FF;&#x6362;&#x6682;&#x5B58;&#x533A;&#x548C;&#x4EE5;&#x53CA;&#x5DE5;&#x4F5C;&#x533A;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x4E5F;&#x662F;&#x6781;&#x5177;&#x5371;&#x9669;&#x6027;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x4F46;&#x4F1A;&#x6E05;&#x9664;&#x5DE5;&#x4F5C;&#x533A;&#x4E2D;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6539;&#x52A8;&#xFF0C;&#x4E5F;&#x4F1A;&#x6E05;&#x9664;&#x6682;&#x5B58;&#x533A;&#x4E2D;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6539;&#x52A8;&#x3002;</li>
+</ul>
+<h4 id="git&#x521B;&#x5EFA;&#x4ED3;&#x5E93;">Git&#x521B;&#x5EFA;&#x4ED3;&#x5E93;</h4>
+<h2 id="git-init">git init</h2>
+<p>Git &#x4F7F;&#x7528; <strong>git init</strong> &#x547D;&#x4EE4;&#x6765;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A; Git &#x4ED3;&#x5E93;&#xFF0C;Git &#x7684;&#x5F88;&#x591A;&#x547D;&#x4EE4;&#x90FD;&#x9700;&#x8981;&#x5728; Git &#x7684;&#x4ED3;&#x5E93;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x6240;&#x4EE5; <strong>git init</strong> &#x662F;&#x4F7F;&#x7528; Git &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x5728;&#x6267;&#x884C;&#x5B8C;&#x6210; <strong>git init</strong> &#x547D;&#x4EE4;&#x540E;&#xFF0C;Git &#x4ED3;&#x5E93;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A; .git &#x76EE;&#x5F55;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x5305;&#x542B;&#x4E86;&#x8D44;&#x6E90;&#x7684;&#x6240;&#x6709;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h3>
+<p>&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;Git&#x4ED3;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x4F7F;&#x5B83;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<pre><code>git init
+</code></pre><p>&#x8BE5;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x751F;&#x6210;&#x4E00;&#x4E2A; .git &#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;Git&#x4ED3;&#x5E93;&#x3002;</p>
+<pre><code>git init newrepo
+</code></pre><p>&#x521D;&#x59CB;&#x5316;&#x540E;&#xFF0C;&#x4F1A;&#x5728; newrepo &#x76EE;&#x5F55;&#x4E0B;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; .git &#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x6240;&#x6709; Git &#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x548C;&#x8D44;&#x6E90;&#x90FD;&#x5B58;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6709;&#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x60F3;&#x8981;&#x7EB3;&#x5165;&#x7248;&#x672C;&#x63A7;&#x5236;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x7528; git add &#x547D;&#x4EE4;&#x544A;&#x8BC9; Git &#x5F00;&#x59CB;&#x5BF9;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x8DDF;&#x8E2A;&#xFF0C;&#x7136;&#x540E;&#x63D0;&#x4EA4;&#xFF1A;</p>
+<pre><code>$ git add *.c
+$ git add README
+$ git commit -m &apos;&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;&#x7248;&#x672C;&apos;
+</code></pre><p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x5C06;&#x76EE;&#x5F55;&#x4E0B;&#x4EE5; .c &#x7ED3;&#x5C3E;&#x53CA; README &#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x4ED3;&#x5E93;&#x4E2D;&#x3002;</p>
+<hr>
+<h2 id="git-clone">git clone</h2>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528; <strong>git clone</strong> &#x4ECE;&#x73B0;&#x6709; Git &#x4ED3;&#x5E93;&#x4E2D;&#x62F7;&#x8D1D;&#x9879;&#x76EE;&#xFF08;&#x7C7B;&#x4F3C; <strong>svn checkout</strong>&#xFF09;&#x3002;</p>
+<p>&#x514B;&#x9686;&#x4ED3;&#x5E93;&#x7684;&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre><code>git clone &lt;repo&gt;
+</code></pre><p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x514B;&#x9686;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code>git clone &lt;repo&gt; &lt;directory&gt;
+</code></pre><p><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</strong></p>
+<ul>
+<li><strong>repo:</strong>Git &#x4ED3;&#x5E93;&#x3002;</li>
+<li><strong>directory:</strong>&#x672C;&#x5730;&#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x8981;&#x514B;&#x9686; Ruby &#x8BED;&#x8A00;&#x7684; Git &#x4EE3;&#x7801;&#x4ED3;&#x5E93; Grit&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>$ git clone git://github.com/schacon/grit.git
+</code></pre><p>&#x6267;&#x884C;&#x8BE5;&#x547D;&#x4EE4;&#x540E;&#xFF0C;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;grit&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A; .git &#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x4E0B;&#x8F7D;&#x4E0B;&#x6765;&#x7684;&#x6240;&#x6709;&#x7248;&#x672C;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x8981;&#x65B0;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x672B;&#x5C3E;&#x6307;&#x5B9A;&#x65B0;&#x7684;&#x540D;&#x5B57;&#xFF1A;</p>
+<pre><code>$ git clone git://github.com/schacon/grit.git mygrit
+</code></pre><h2 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h2>
+<p>git &#x7684;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528; <strong>git config</strong> &#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x663E;&#x793A;&#x5F53;&#x524D;&#x7684; git &#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>$ git config --list
+credential.helper=osxkeychain
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=true
+</code></pre><p>&#x7F16;&#x8F91; git &#x914D;&#x7F6E;&#x6587;&#x4EF6;:</p>
+<pre><code>$ git config -e    # &#x9488;&#x5BF9;&#x5F53;&#x524D;&#x4ED3;&#x5E93;
+</code></pre><p>&#x6216;&#x8005;&#xFF1A;</p>
+<pre><code>$ git config -e --global   # &#x9488;&#x5BF9;&#x7CFB;&#x7EDF;&#x4E0A;&#x6240;&#x6709;&#x4ED3;&#x5E93;
+</code></pre><p>&#x8BBE;&#x7F6E;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x65F6;&#x7684;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>$ git config --global user.name &quot;runoob&quot;
+$ git config --global user.email test@runoob.com
+</code></pre><p>&#x5982;&#x679C;&#x53BB;&#x6389; <strong>--global</strong> &#x53C2;&#x6570;&#x53EA;&#x5BF9;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x6709;&#x6548;&#x3002;</p>
+<h4 id="git&#x57FA;&#x672C;&#x64CD;&#x4F5C;">Git&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h4>
+<p>Git &#x7684;&#x5DE5;&#x4F5C;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x548C;&#x4FDD;&#x5B58;&#x4F60;&#x9879;&#x76EE;&#x7684;&#x5FEB;&#x7167;&#x53CA;&#x4E0E;&#x4E4B;&#x540E;&#x7684;&#x5FEB;&#x7167;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x3002;</p>
+<p>&#x672C;&#x7AE0;&#x5C06;&#x5BF9;&#x6709;&#x5173;&#x521B;&#x5EFA;&#x4E0E;&#x63D0;&#x4EA4;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x5FEB;&#x7167;&#x7684;&#x547D;&#x4EE4;&#x4F5C;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p>Git &#x5E38;&#x7528;&#x7684;&#x662F;&#x4EE5;&#x4E0B; 6 &#x4E2A;&#x547D;&#x4EE4;&#xFF1A;<strong>git clone</strong>&#x3001;<strong>git push</strong>&#x3001;<strong>git add</strong> &#x3001;<strong>git commit</strong>&#x3001;<strong>git checkout</strong>&#x3001;<strong>git pull</strong>&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p><img src="imgs/git-command.jpg" alt="img"></p>
+<p><strong>&#x8BF4;&#x660E;&#xFF1A;</strong></p>
+<ul>
+<li>workspace&#xFF1A;&#x5DE5;&#x4F5C;&#x533A;</li>
+<li>staging area&#xFF1A;&#x6682;&#x5B58;&#x533A;/&#x7F13;&#x5B58;&#x533A;</li>
+<li>local repository&#xFF1A;&#x6216;&#x672C;&#x5730;&#x4ED3;&#x5E93;</li>
+<li>remote repository&#xFF1A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<pre><code>$ git init    
+$ git add .    
+$ git commit
+</code></pre><ul>
+<li>git init - &#x521D;&#x59CB;&#x5316;&#x4ED3;&#x5E93;&#x3002;</li>
+<li>git add . - &#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x6682;&#x5B58;&#x533A;&#x3002;</li>
+<li>git commit - &#x5C06;&#x6682;&#x5B58;&#x533A;&#x5185;&#x5BB9;&#x6DFB;&#x52A0;&#x5230;&#x4ED3;&#x5E93;&#x4E2D;&#x3002;</li>
+</ul>
+<h3 id="&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#x547D;&#x4EE4;">&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#x547D;&#x4EE4;</h3>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; git &#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x547D;&#x4EE4;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>git init</code></td>
+<td style="text-align:left">&#x521D;&#x59CB;&#x5316;&#x4ED3;&#x5E93;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git clone</code></td>
+<td style="text-align:left">&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="&#x63D0;&#x4EA4;&#x4E0E;&#x4FEE;&#x6539;">&#x63D0;&#x4EA4;&#x4E0E;&#x4FEE;&#x6539;</h2>
+<p>Git &#x7684;&#x5DE5;&#x4F5C;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x548C;&#x4FDD;&#x5B58;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x7684;&#x5FEB;&#x7167;&#x53CA;&#x4E0E;&#x4E4B;&#x540E;&#x7684;&#x5FEB;&#x7167;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x6709;&#x5173;&#x521B;&#x5EFA;&#x4E0E;&#x63D0;&#x4EA4;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x7684;&#x5FEB;&#x7167;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x547D;&#x4EE4;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>git add</code></td>
+<td style="text-align:left">&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git status</code></td>
+<td style="text-align:left">&#x67E5;&#x770B;&#x4ED3;&#x5E93;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x663E;&#x793A;&#x6709;&#x53D8;&#x66F4;&#x7684;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git diff</code></td>
+<td style="text-align:left">&#x6BD4;&#x8F83;&#x6587;&#x4EF6;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x5373;&#x6682;&#x5B58;&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x5DEE;&#x5F02;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git commit</code></td>
+<td style="text-align:left">&#x63D0;&#x4EA4;&#x6682;&#x5B58;&#x533A;&#x5230;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git reset</code></td>
+<td style="text-align:left">&#x56DE;&#x9000;&#x7248;&#x672C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git rm</code></td>
+<td style="text-align:left">&#x5220;&#x9664;&#x5DE5;&#x4F5C;&#x533A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git mv</code></td>
+<td style="text-align:left">&#x79FB;&#x52A8;&#x6216;&#x91CD;&#x547D;&#x540D;&#x5DE5;&#x4F5C;&#x533A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;">&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x547D;&#x4EE4;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>git log</code></td>
+<td style="text-align:left">&#x67E5;&#x770B;&#x5386;&#x53F2;&#x63D0;&#x4EA4;&#x8BB0;&#x5F55;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git blame &lt;file&gt;</code></td>
+<td style="text-align:left">&#x4EE5;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x5386;&#x53F2;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x8FDC;&#x7A0B;&#x64CD;&#x4F5C;">&#x8FDC;&#x7A0B;&#x64CD;&#x4F5C;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x547D;&#x4EE4;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>git remote</code></td>
+<td style="text-align:left">&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git fetch</code></td>
+<td style="text-align:left">&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x4EE3;&#x7801;&#x5E93;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git pull</code></td>
+<td style="text-align:left">&#x4E0B;&#x8F7D;&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x5E76;&#x5408;&#x5E76;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git push</code></td>
+<td style="text-align:left">&#x4E0A;&#x4F20;&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x5E76;&#x5408;&#x5E76;</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -338,7 +554,7 @@ $ git config --global user.email rlwb@gmail.com
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git 教程","level":"1.5","depth":1,"next":{"title":"每日一题","level":"1.6","depth":1,"ref":"","articles":[{"title":"前端性能优化","level":"1.6.1","depth":2,"path":"每日一题/20201126.md","ref":"每日一题/20201126.md","articles":[]},{"title":"合集","level":"1.6.2","depth":2,"path":"每日一题/20201127.md","ref":"每日一题/20201127.md","articles":[]},{"title":"合集 02","level":"1.6.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]}]},"previous":{"title":"linux常用命令","level":"1.4","depth":1,"path":"Linux.md","ref":"Linux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GIT.md","mtime":"2020-12-16T00:54:59.846Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-16T00:55:23.101Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git 教程","level":"1.5","depth":1,"next":{"title":"每日一题","level":"1.6","depth":1,"ref":"","articles":[{"title":"前端性能优化","level":"1.6.1","depth":2,"path":"每日一题/20201126.md","ref":"每日一题/20201126.md","articles":[]},{"title":"合集","level":"1.6.2","depth":2,"path":"每日一题/20201127.md","ref":"每日一题/20201127.md","articles":[]},{"title":"合集 02","level":"1.6.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]}]},"previous":{"title":"linux常用命令","level":"1.4","depth":1,"path":"Linux.md","ref":"Linux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GIT.md","mtime":"2020-12-16T23:51:39.345Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-16T23:52:11.220Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

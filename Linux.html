@@ -1,0 +1,440 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>linux常用命令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="GIT.html" />
+    
+    
+    <link rel="prev" href="WXAPP.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="DEPLOY.html">
+            
+                <a href="DEPLOY.html">
+            
+                    
+                    项目部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="WXAPP.html">
+            
+                <a href="WXAPP.html">
+            
+                    
+                    小程序教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="Linux.html">
+            
+                <a href="Linux.html">
+            
+                    
+                    linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="GIT.html">
+            
+                <a href="GIT.html">
+            
+                    
+                    git 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    每日一题
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="每日一题/20201126.html">
+            
+                <a href="每日一题/20201126.html">
+            
+                    
+                    前端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="每日一题/20201127.html">
+            
+                <a href="每日一题/20201127.html">
+            
+                    
+                    合集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="每日一题/20201128.html">
+            
+                <a href="每日一题/20201128.html">
+            
+                    
+                    合集 02
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >linux常用命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x5E38;&#x89C1;&#x547D;&#x4EE4;
+1.&#x521B;&#x5EFA;&#x76EE;&#x5F55;
+    mkdir &#x76EE;&#x5F55;&#x540D;</p>
+<p>2.&#x521B;&#x5EFA;&#x6587;&#x4EF6;
+    touch &#x6587;&#x4EF6;&#x540D;</p>
+<p>3.&#x67E5;&#x770B;&#x6587;&#x4EF6;
+    cat &#x6587;&#x4EF6;&#x540D;</p>
+<p>4.&#x5220;&#x9664;
+    rm -rf &#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x540D;</p>
+<p>5.&#x590D;&#x5236;
+    cp &#x6E90;&#x6587;&#x4EF6; &#x76EE;&#x6807;&#x4F4D;&#x7F6E; 
+    cp -r  ./ys/ ./hys/<br>    &#x6CE8;: -r &#x590D;&#x5236;&#x76EE;&#x5F55;</p>
+<p>6.mv &#x526A;&#x5207;&#x6216;&#x6539;&#x540D;<br>    (1)&#x526A;&#x5207;<br>        mv &#x6E90;&#x6587;&#x4EF6; &#x76EE;&#x6807;&#x4F4D;&#x7F6E;
+        &#x5982;: mv weixin ./software<br>    (2)&#x91CD;&#x547D;&#x540D;<br>        mv &#x6E90;&#x6587;&#x4EF6;&#x540D; &#x65B0;&#x540D;&#x5B57;</p>
+<p>7.&#x6E05;&#x5C4F;
+    clear &#x6216;&#x8005; Ctrl + l</p>
+<p>8.&#x5F3A;&#x5236;&#x7EC8;&#x6B62;
+    ctrl + C</p>
+<ol>
+<li>&#x4E0A;&#x4F20;
+ &#x547D;&#x4EE4;:<pre><code> rz
+</code></pre> &#x53C2;&#x6570;:<pre><code> -r --&#x5373;&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x4E2D;&#x65AD;&#x4F1A;&#x91CD;&#x4F20;
+ -y --&#x8868;&#x793A;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8986;&#x76D6;
+</code></pre></li>
+<li>&#x4E0B;&#x8F7D;
+&#x547D;&#x4EE4;:<pre><code>sz
+</code></pre>&#x4F8B;&#x5B50;: &#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;html&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6253;&#x5305;&#x751F;&#x6210;new.tar.gz<pre><code>tar -zcvf new.tar.gz html
+sz new.tar.gz
+</code></pre></li>
+</ol>
+<p>&#x67E5;&#x770B;&#x76EE;&#x5F55;</p>
+<ol>
+<li><p>ls      &#x663E;&#x793A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5185;&#x5BB9;
+  1.1 ls -l  //&#x957F;&#x683C;&#x5F0F;&#x663E;&#x793A;&#xFF08;&#x7F29;&#x7565;&#x9009;&#x9879;&#x7528;&#x4E00;&#x4E2A;&#x51CF;&#x53F7;&#xFF0C;&#x5B8C;&#x6574;&#x7684;&#x9009;&#x9879;&#x662F;&#x4E24;&#x4E2A;&#x51CF;&#x53F7;&#xFF09;</p>
+<p>  1.2 ls -hl -h &#x4EBA;&#x6027;&#x5316;&#x663E;&#x793A;</p>
+<p>  1.3 ls -a &#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x4EF6;</p>
+<pre><code>  &#x6587;&#x4EF6;&#x540D;&#x524D;&#x9762;&#x5E26;.&#x7684;&#x662F;&#x9690;&#x85CF;&#x6587;&#x4EF6;
+</code></pre></li>
+<li><p>cd     &#x5207;&#x6362;&#x6240;&#x5728;&#x76EE;&#x5F55;
+  cd      //&#x56DE;&#x5230;&#x767B;&#x5F55;&#x7528;&#x6237;&#x7684;&#x5BB6;&#x76EE;&#x5F55;
+  cd /home //&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x7EA7;&#x76EE;&#x5F55;
+  cd /    //&#x8FDB;&#x5165;&#x6839;&#x76EE;&#x5F55;
+  cd -    //&#x8FDB;&#x5165;&#x4E0A;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x76EE;&#x5F55;
+  cd ..   //&#x8FDB;&#x5165;&#x4E0A;&#x4E00;&#x7EA7;&#x76EE;&#x5F55;
+  tab &#x952E; &#x53EF;&#x4EE5;&#x5BF9;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x8865;&#x5168;<br>  &#x76F8;&#x5BF9;&#x8DEF;&#x5F84;</p>
+<pre><code>  &#x53C2;&#x8003;&#x5F53;&#x524D;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF0C;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x8BF7;&#x67E5;&#x770B;&#x597D;&#x4F60;&#x7684;&#x6240;&#x5728;&#x76EE;&#x5F55;
+</code></pre><p>  &#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</p>
+<pre><code>  &#x4ECE;&#x6839;&#x76EE;&#x5F55;&#x5F00;&#x59CB;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x67E5;&#x627E;&#xFF0C;&#x76F4;&#x63A5;&#x627E;&#x5230;&#x4F4D;&#x7F6E;
+</code></pre></li>
+</ol>
+<ol>
+<li><p>pwd &#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x5728;&#x76EE;&#x5F55;</p>
+</li>
+<li><p>linux &#x5E38;&#x89C1;&#x76EE;&#x5F55;&#xFF08;&#x4EE5;&#x4E0B;&#x76EE;&#x5F55;&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x8BB0;&#x5F55;&#x8D77;&#x6765;&#xFF09;
+ /&#x6839;&#x76EE;&#x5F55;
+ /root       &#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x7684;&#x5BB6;&#x76EE;&#x5F55;
+ /root/home  &#x666E;&#x901A;&#x7528;&#x6237;&#x7684;&#x5BB6;&#x76EE;&#x5F55;
+ /bin        &#x547D;&#x4EE4;&#x4FDD;&#x5B58;&#x76EE;&#x5F55;(&#x666E;&#x901A;&#x7528;&#x6237;&#x7684;)
+ /sbin       &#x547D;&#x4EE4;&#x4FDD;&#x5B58;&#x76EE;&#x5F55;&#xFF08;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x7684;&#xFF09;
+ /boot       &#x542F;&#x52A8;&#x76EE;&#x5F55; &#x542F;&#x52A8;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x5185;&#x5BB9;
+ /dev       &#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x76EE;&#x5F55;
+ /etc       &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x76EE;&#x5F55;
+ /lib       &#x51FD;&#x6570;&#x5E93;&#x4FDD;&#x5B58;&#x76EE;&#x5F55;
+ /mnt       &#x7CFB;&#x7EDF;&#x6302;&#x8F7D;&#x76EE;&#x5F55;(&#x63A8;&#x8350;&#x4F7F;&#x7528;)
+ /media      &#x6302;&#x8F7D;&#x76EE;&#x5F55;
+ /tmp        &#x4E34;&#x65F6;&#x76EE;&#x5F55;
+ /proc       &#x76F4;&#x63A5;&#x5199;&#x5165;&#x5185;&#x5B58;
+ /usr        &#x7CFB;&#x7EDF;&#x8F6F;&#x4EF6;&#x76EE;&#x5F55;
+ /var        &#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x6587;&#x6863;&#x5185;&#x5BB9;
+ /var/log    &#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;   
+&#x3000;&#x3000;</p>
+</li>
+</ol>
+<p>&#x3000;</p>
+<p>&#x89E3;&#x538B;</p>
+<p>&#x89E3;&#x538B;
+    tar -xvf filename.tar
+&#x538B;&#x7F29;
+    tar -cvf filename.tar</p>
+<p>&#x5176;&#x4E2D;zxvf&#x542B;&#x4E49;&#x5206;&#x522B;&#x5982;&#x4E0B;:
+z: &#x3000;&#x3000;gzip  &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;    &#x538B;&#x7F29;&#x683C;&#x5F0F;
+x: &#x3000;  extract&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;   &#x89E3;&#x538B;
+c:    create                  &#x521B;&#x5EFA;&#x538B;&#x7F29;&#x6587;&#x4EF6;
+v:&#x3000;&#x3000; verbose&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;   &#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
+f: &#x3000;&#x3000;file(file=archieve)&#x3000;&#x3000; &#x6587;&#x4EF6;</p>
+<p>&#x6CE8;:&#x4ECE;1.15&#x7248;&#x672C;&#x5F00;&#x59CB;tar&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x538B;&#x7F29;&#x7684;&#x683C;&#x5F0F;,&#x6545;&#x4E0D;&#x9700;&#x4EBA;&#x4E3A;&#x533A;&#x5206;&#x538B;&#x7F29;&#x683C;&#x5F0F;&#x5C31;&#x80FD;&#x6B63;&#x786E;&#x89E3;&#x538B;</p>
+<p>&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5927;&#x5C0F;
+1
+2
+3
+du &#x76EE;&#x6807;&#x76EE;&#x5F55; -sh
+    -h, --human-readable  // &#x663E;&#x793A;&#x5355;&#x4F4D;,&#x4EE5;&#x53EF;&#x8BFB;&#x683C;&#x5F0F;&#x6253;&#x5370;&#x5927;&#x5C0F;&#xFF08;&#x4F8B;&#x5982;1K 234M 2G&#xFF09;
+    -s, --summarize       // &#x53EA;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x5408;&#x8BA1;&#x503C;,&#x4EC5;&#x663E;&#x793A;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x603B;&#x8BA1;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="WXAPP.html" class="navigation navigation-prev " aria-label="Previous page: 小程序教程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="GIT.html" class="navigation navigation-next " aria-label="Next page: git 教程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"linux常用命令","level":"1.4","depth":1,"next":{"title":"git 教程","level":"1.5","depth":1,"path":"GIT.md","ref":"GIT.md","articles":[]},"previous":{"title":"小程序教程","level":"1.3","depth":1,"path":"WXAPP.md","ref":"WXAPP.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux.md","mtime":"2020-12-16T00:35:27.143Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-16T00:35:49.430Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

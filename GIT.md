@@ -562,3 +562,101 @@ index 0000000..69b5711
 +echo '菜鸟教程：www.runoob.com';
 +?>
 ```
+
+#### Git rm命令
+
+git rm 命令用于删除文件。
+
+如果只是简单地从工作目录中手工删除文件，运行 **git status** 时就会在 **Changes not staged for commit** 的提示。
+
+git rm 删除文件有以下几种形式：
+
+1、将文件从暂存区和工作区中删除：
+
+```shell
+git rm <file>
+```
+
+以下实例从暂存区和工作区中删除 runoob.txt 文件：
+
+```shell
+git rm runoob.txt 
+```
+
+如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 **-f**。
+
+强行从暂存区和工作区中删除修改后的 runoob.txt 文件：
+
+```shell
+git rm -f runoob.txt 
+```
+
+如果想把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 **--cached** 选项即可：
+
+```shell
+git rm --cached <file>
+```
+
+以下实例从暂存区中删除 runoob.txt 文件：
+
+```shell
+git rm --cached runoob.txt
+```
+
+### 实例
+
+删除 hello.php 文件：
+
+```shell
+$ git rm hello.php 
+rm 'hello.php'
+$ ls
+README
+```
+
+文件从暂存区域移除，但工作区保留：
+
+```shell
+$ git rm --cached README 
+rm 'README'
+$ ls
+README
+```
+
+可以递归删除，即如果后面跟的是一个目录做为参数，则会递归删除整个目录中的所有子目录和文件：
+
+```shell
+git rm –r * 
+```
+
+进入某个目录中，执行此语句，会删除该目录下的所有文件和子目录。
+
+
+
+#### Git mv命令
+
+git mv 命令用于移动或重命名一个文件、目录或软连接。
+
+```shell
+git mv [file] [newfile]
+```
+
+如果新但文件名已经存在，但还是要重命名它，可以使用 **-f** 参数：
+
+```shell
+git mv -f [file] [newfile]
+```
+
+我们可以添加一个 README 文件（如果没有但话）：
+
+```shell
+$ git add README 
+```
+
+然后对其重命名:
+
+```shell
+$ git mv README  README.md
+$ ls
+README.md
+```

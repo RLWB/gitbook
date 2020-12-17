@@ -1,6 +1,6 @@
-##  git教程
+## git 教程
 
-###  一、简介
+### 一、简介
 
 Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。
 
@@ -8,17 +8,15 @@ Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个�
 
 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。
 
-Git的两个主要用途： 代码备份和版本控制，你可以逐步处理代码，在需要回滚到备份副本的过程中保存每一步的进度！
+Git 的两个主要用途： 代码备份和版本控制，你可以逐步处理代码，在需要回滚到备份副本的过程中保存每一步的进度！
 
-
-
-###  二、背景
+### 二、背景
 
 那什么是版本控制系统？
 
-如果你用Microsoft Word写过长篇大论，那你一定有这样的经历：
+如果你用 Microsoft Word 写过长篇大论，那你一定有这样的经历：
 
-想删除一个段落，又怕将来想恢复找不回来怎么办？有办法，先把当前文件“另存为……”一个新的Word文件，再接着改，改到一定程度，再“另存为……”一个新文件，这样一直改下去，最后你的Word文档变成了这样：
+想删除一个段落，又怕将来想恢复找不回来怎么办？有办法，先把当前文件“另存为……”一个新的 Word 文件，再接着改，改到一定程度，再“另存为……”一个新文件，这样一直改下去，最后你的 Word 文档变成了这样：
 
 ![lots-of-docs](imgs\0.jpeg)
 
@@ -26,7 +24,7 @@ Git的两个主要用途： 代码备份和版本控制，你可以逐步处理�
 
 看着一堆乱七八糟的文件，想保留最新的一个，然后把其他的删掉，又怕哪天会用上，还不敢删，真郁闷。
 
-更要命的是，有些部分需要你的财务同事帮助填写，于是你把文件Copy到U盘里给她（也可能通过Email发送一份给她），然后，你继续修改Word文件。一天后，同事再把Word文件传给你，此时，你必须想想，发给她之后到你收到她的文件期间，你作了哪些改动，得把你的改动和她的部分合并，真困难。
+更要命的是，有些部分需要你的财务同事帮助填写，于是你把文件 Copy 到 U 盘里给她（也可能通过 Email 发送一份给她），然后，你继续修改 Word 文件。一天后，同事再把 Word 文件传给你，此时，你必须想想，发给她之后到你收到她的文件期间，你作了哪些改动，得把你的改动和她的部分合并，真困难。
 
 于是你想，如果有一个软件，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？
 
@@ -34,25 +32,21 @@ Git的两个主要用途： 代码备份和版本控制，你可以逐步处理�
 
 ![](imgs\git01.png)
 
-这样，你就结束了手动管理多个“版本”的史前时代，进入到版本控制的20世纪。
+这样，你就结束了手动管理多个“版本”的史前时代，进入到版本控制的 20 世纪。
 
+### 三、Git 安装配置
 
+在使用 Git 前我们需要先安装 Git。Git 目前支持 Linux/Unix、Solaris、Mac 和 Windows 平台上运行。
 
-### 三、Git安装配置
-
-在使用Git前我们需要先安装 Git。Git 目前支持 Linux/Unix、Solaris、Mac和 Windows 平台上运行。
-
-* windows平台安装
+- windows 平台安装
 
   国内镜像：https://npm.taobao.org/mirrors/git-for-windows/。
 
-  安装完成，就可以是哦那个git命令行工具，同时也带有图形界面的工具
+  安装完成，就可以是哦那个 git 命令行工具，同时也带有图形界面的工具
 
-  开始菜单找到git bash，打开git 命令窗口，就可以执行git操作了。
+  开始菜单找到 git bash，打开 git 命令窗口，就可以执行 git 操作了。
 
-
-
-###  四、Git配置
+### 四、Git 配置
 
 Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量。
 
@@ -62,9 +56,9 @@ Git 提供了一个叫做 git config 的工具，专门用来配置或读取相�
 - `~/.gitconfig` 文件：用户目录下的配置文件只适用于该用户。若使用 `git config` 时用 `--global` 选项，读写的就是这个文件。
 - 当前项目的 Git 目录中的配置文件（也就是工作目录中的 `.git/config` 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 `.git/config` 里的配置会覆盖 `/etc/gitconfig` 中的同名变量。
 
-####  用户信息
+#### 用户信息
 
-在使用git前，我们需要配置下用户名和电子邮件地址，当我们提交的时候可以告诉git我们是谁。
+在使用 git 前，我们需要配置下用户名和电子邮件地址，当我们提交的时候可以告诉 git 我们是谁。
 
 ```shell
 $ git config --global user.name "rlwb"
@@ -88,11 +82,9 @@ $ git config --list
 - 提交修改。
 - 在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。
 
-
-
 ![](imgs/git-process.png)
 
-#### Git工作区、暂存区和版本库
+#### Git 工作区、暂存区和版本库
 
 ##### 基本概念
 
@@ -109,14 +101,14 @@ $ git config --list
 - 图中左侧为工作区，右侧为版本库。在版本库中标记为 "index" 的区域是暂存区（stage/index），标记为 "master" 的是 master 分支所代表的目录树。
 - 图中我们可以看出此时 "HEAD" 实际是指向 master 分支的一个"游标"。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。
 - 图中的 objects 标识的区域为 Git 的对象库，实际位于 ".git/objects" 目录下，里面包含了创建的各种对象及内容。
-- 当对工作区修改（或新增）的文件执行 **git add** 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。
+- 当对工作区修改（或新增）的文件执行 **git add** 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的 ID 被记录在暂存区的文件索引中。
 - 当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。
 - 当执行 **git reset HEAD** 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。
 - 当执行 **git rm --cached <file>** 命令时，会直接从暂存区删除文件，工作区则不做出改变。
 - 当执行 **git checkout .** 或者 **git checkout -- <file>** 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。
 - 当执行 **git checkout HEAD .** 或者 **git checkout HEAD <file>** 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。
 
-####  Git创建仓库
+#### Git 创建仓库
 
 ## git init
 
@@ -126,7 +118,7 @@ Git 使用 **git init** 命令来初始化一个 Git 仓库，Git 的很多命�
 
 ### 使用方法
 
-使用当前目录作为Git仓库，我们只需使它初始化。
+使用当前目录作为 Git 仓库，我们只需使它初始化。
 
 ```
 git init
@@ -134,7 +126,7 @@ git init
 
 该命令执行完后会在当前目录生成一个 .git 目录。
 
-使用我们指定目录作为Git仓库。
+使用我们指定目录作为 Git 仓库。
 
 ```
 git init newrepo
@@ -152,7 +144,7 @@ $ git commit -m '初始化项目版本'
 
 以上命令将目录下以 .c 结尾及 README 文件提交到仓库中。
 
-------
+---
 
 ## git clone
 
@@ -181,11 +173,9 @@ git clone <repo> <directory>
 $ git clone git://github.com/schacon/grit.git
 ```
 
-执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。
+执行该命令后，会在当前目录下创建一个名为 grit 的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。
 
 如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：
-
-
 
 ```
 $ git clone git://github.com/schacon/grit.git mygrit
@@ -211,7 +201,7 @@ core.precomposeunicode=true
 编辑 git 配置文件:
 
 ```
-$ git config -e    # 针对当前仓库 
+$ git config -e    # 针对当前仓库
 ```
 
 或者：
@@ -229,7 +219,7 @@ $ git config --global user.email test@runoob.com
 
 如果去掉 **--global** 参数只对当前仓库有效。
 
-####  Git基本操作
+#### Git 基本操作
 
 Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。
 
@@ -249,9 +239,9 @@ Git 常用的是以下 6 个命令：**git clone**、**git push**、**git add** 
 一个简单的操作步骤：
 
 ```
-$ git init    
-$ git add .    
-$ git commit  
+$ git init
+$ git add .
+$ git commit
 ```
 
 - git init - 初始化仓库。
@@ -267,7 +257,7 @@ $ git commit
 | `git init`  | 初始化仓库                             |
 | `git clone` | 拷贝一份远程仓库，也就是下载一个项目。 |
 
-------
+---
 
 ## 提交与修改
 
@@ -301,7 +291,7 @@ Git 的工作就是创建和保存你的项目的快照及与之后的快照进�
 | `git pull`   | 下载远程代码并合并 |
 | `git push`   | 上传远程代码并合并 |
 
-#### git add命令
+#### git add 命令
 
 **git add** 命令可将该文件添加到暂存区。
 
@@ -333,7 +323,7 @@ README        hello.php
 $ git status -s
 M README
 M hello.php
-$ 
+$
 ```
 
 git status 命令用于查看项目的当前状态。
@@ -341,7 +331,7 @@ git status 命令用于查看项目的当前状态。
 接下来我们执行 git add 命令来添加文件：
 
 ```
-$ git add README hello.php 
+$ git add README hello.php
 ```
 
 现在我们再执行 git status，就可以看到这两个文件已经加上去了。
@@ -350,7 +340,7 @@ $ git add README hello.php
 $ git status -s
 M  README
 M  hello.php
-$ 
+$
 ```
 
 新项目中，添加所有文件很普遍，我们可以使用 **git add .** 命令来添加当前项目的所有文件。
@@ -381,3 +371,194 @@ A  hello.php
 ```
 
 文件修改后，我们一般都需要进行 git add 操作，从而保存历史版本。
+
+#### Git commit 命令
+
+前面章节我们使用 git add 命令将内容写入暂存区。
+
+git commit 命令将暂存区内容添加到本地仓库中。
+
+提交暂存区到本地仓库中:
+
+```
+git commit -m [message]
+```
+
+[message] 可以是一些备注信息。
+
+提交暂存区的指定文件到仓库区：
+
+```
+$ git commit [file1] [file2] ... -m [message]
+```
+
+**-a** 参数设置修改文件后不需要执行 git add 命令，直接来提交
+
+```
+$ git commit -a
+```
+
+### 设置提交代码时的用户信息
+
+开始前我们需要先设置提交的用户信息，包括用户名和邮箱：
+
+```
+$ git config --global user.name 'runoob'
+$ git config --global user.email test@runoob.com
+```
+
+如果去掉 --global 参数只对当前仓库有效。
+
+### 提交修改
+
+接下来我们就可以对 hello.php 的所有改动从暂存区内容添加到本地仓库中。
+
+以下实例，我们使用 -m 选项以在命令行中提供提交注释。
+
+```
+$ git add hello.php
+$ git status -s
+A  README
+A  hello.php
+$ git commit -m '第一次版本提交'
+[master (root-commit) d32cf1f] 第一次版本提交
+ 2 files changed, 4 insertions(+)
+ create mode 100644 README
+ create mode 100644 hello.php
+
+```
+
+现在我们已经记录了快照。如果我们再执行 git status:
+
+```
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+```
+
+以上输出说明我们在最近一次提交之后，没有做任何改动，是一个 "working directory clean"，翻译过来就是干净的工作目录。
+
+如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：
+
+```
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+# modified:   hello.php
+#
+~
+~
+".git/COMMIT_EDITMSG" 9L, 257C
+```
+
+如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：
+
+```
+git commit -a
+```
+
+我们先修改 hello.php 文件为以下内容：
+
+```
+<?php
+echo '菜鸟教程：www.runoob.com';
+echo '菜鸟教程：www.runoob.com';
+?>
+```
+
+再执行以下命令：
+
+```
+$ git commit -am '修改 hello.php 文件'
+[master 71ee2cb] 修改 hello.php 文件
+ 1 file changed, 1 insertion(+)
+```
+
+#### Git diff 命令
+
+git diff 命令比较文件的不同，即比较文件在暂存区和工作区的差异。
+
+git diff 命令显示已写入暂存区和已经被修改但尚未写入暂存区文件对区别。
+
+git diff 有两个主要的应用场景。
+
+- 尚未缓存的改动：**git diff**
+- 查看已缓存的改动： **git diff --cached**
+- 查看已缓存的与未缓存的所有改动：**git diff HEAD**
+- 显示摘要而非整个 diff：**git diff --stat**
+
+显示暂存区和工作区的差异:
+
+```
+$ git diff [file]
+```
+
+显示暂存区和上一次提交(commit)的差异:
+
+```
+$ git diff --cached [file]
+或
+$ git diff --staged [file]
+```
+
+显示两次提交之间的差异:
+
+```
+$ git diff [first-branch]...[second-branch]
+```
+
+在 hello.php 文件中输入以下内容：
+
+```
+<?php
+echo '菜鸟教程：www.runoob.com';
+?>
+```
+
+使用 git status 查看状态：
+
+```
+$ git status -s
+A  README
+AM hello.php
+$ git diff
+diff --git a/hello.php b/hello.php
+index e69de29..69b5711 100644
+--- a/hello.php
++++ b/hello.php
+@@ -0,0 +1,3 @@
++<?php
++echo '菜鸟教程：www.runoob.com';
++?>
+```
+
+git status 显示你上次提交更新后的更改或者写入缓存的改动， 而 git diff 一行一行地显示这些改动具体是啥。
+
+接下来我们来查看下 **git diff --cached** 的执行效果：
+
+```shell
+$ git add hello.php
+$ git status -s
+A  README
+A  hello.php
+$ git diff --cached
+diff --git a/README b/README
+new file mode 100644
+index 0000000..8f87495
+--- /dev/null
++++ b/README
+@@ -0,0 +1 @@
++*# Runoob Git 测试*
+diff --git a/hello.php b/hello.php
+new file mode 100644
+index 0000000..69b5711
+--- /dev/null
++++ b/hello.php
+@@ -0,0 +1,3 @@
++ < ?php
++echo '菜鸟教程：www.runoob.com';
++?>
+```

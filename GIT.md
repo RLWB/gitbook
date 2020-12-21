@@ -1094,3 +1094,196 @@ Git 提交历史一般常用两个命令：
   ^d2097aa (tianqixin 2020-08-25 14:59:25 +0800 1) 
   db9315b0 (runoob    2020-08-25 16:00:23 +0800 2)
   ```
+
+#### Git 标签
+
+如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。
+
+比如说，我们想为我们的 runoob 项目发布一个"1.0"版本。 我们可以用 git tag -a v1.0 命令给最新一次提交打上（HEAD）"v1.0"的标签。
+
+-a 选项意为"创建一个带注解的标签"。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。
+
+```
+$ git tag -a v1.0 
+```
+
+当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。
+
+现在，注意当我们执行 git log --decorate 时，我们可以看到我们的标签了：
+
+```
+*   d5e9fc2 (HEAD -> master) Merge branch 'change_site'
+|\  
+| * 7774248 (change_site) changed the runoob.php
+* | c68142b 修改代码
+|/  
+* c1501a2 removed test.txt、add runoob.php
+* 3e92c19 add test.txt
+* 3b58100 第一次版本提交
+```
+
+如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。
+
+例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：
+
+```
+$ git tag -a v0.9 85fc7e7
+$ git log --oneline --decorate --graph
+*   d5e9fc2 (HEAD -> master) Merge branch 'change_site'
+|\  
+| * 7774248 (change_site) changed the runoob.php
+* | c68142b 修改代码
+|/  
+* c1501a2 removed test.txt、add runoob.php
+* 3e92c19 add test.txt
+* 3b58100 (tag: v0.9) 第一次版本提交
+```
+
+如果我们要查看所有标签可以使用以下命令：
+
+```
+$ git tag
+v0.9
+v1.0
+```
+
+指定标签信息命令：
+
+```
+git tag -a <tagname> -m "runoob.com标签"
+```
+
+PGP签名标签命令：
+
+```
+git tag -s <tagname> -m "runoob.com标签"
+```
+
+### 远程操作命令
+
+#### git remote
+
+**git remote** 命用于在远程仓库的操作。
+
+本章节内容我们将以 Github 作为远程仓库来操作，所以阅读本章节前需要先阅读关于 Github 的相关内容：[Git 远程仓库(Github)](https://www.runoob.com/git/git-remote-repo.html)。
+
+显示所有远程仓库：
+
+```
+git remote -v
+```
+
+以下我们先载入远程仓库，然后查看信息：
+
+$ **git clone** https:**//**github.com**/**tianqixin**/**runoob-git-test
+$ **cd** runoob-git-test
+$ **git remote** -v
+origin https:**//**github.com**/**tianqixin**/**runoob-git-test **(**fetch**)**
+origin https:**//**github.com**/**tianqixin**/**runoob-git-test **(**push**)**
+
+**origin** 为远程地址的别名。
+
+显示某个远程仓库的信息：
+
+```
+git remote show [remote]
+```
+
+例如：
+
+```
+$ git remote show https://github.com/tianqixin/runoob-git-test
+* remote https://github.com/tianqixin/runoob-git-test
+  Fetch URL: https://github.com/tianqixin/runoob-git-test
+  Push  URL: https://github.com/tianqixin/runoob-git-test
+  HEAD branch: master
+  Local ref configured for 'git push':
+    master pushes to master (local out of date)
+```
+
+添加远程版本库：
+
+```
+git remote add [shortname] [url]
+```
+
+shortname 为本地的版本库，例如：
+
+```
+# 提交到 Github
+$ git remote add origin git@github.com:tianqixin/runoob-git-test.git
+$ git push -u origin master
+```
+
+其他相关命令：
+
+``` 
+git remote rm name  # 删除远程仓库
+git remote rename old_name new_name  # 修改仓库名
+```
+
+#### git fetch
+
+**git fetch** 命令用于从远程获取代码库。
+
+本章节内容我们将以 Github 作为远程仓库来操作，所以阅读本章节前需要先阅读关于 Github 的相关内容：[Git 远程仓库(Github)](https://www.runoob.com/git/git-remote-repo.html)。
+
+该命令执行完后需要执行 git merge 远程分支到你所在的分支。
+
+从远端仓库提取数据并尝试合并到当前分支：
+
+```
+git merge
+```
+
+该命令就是在执行 git fetch 之后紧接着执行 git merge 远程分支到你所在的任意分支。
+
+假设你配置好了一个远程仓库，并且你想要提取更新的数据，你可以首先执行:
+
+```
+git fetch [alias]
+```
+
+以上命令告诉 Git 去获取它有你没有的数据，然后你可以执行：
+
+```
+git merge [alias]/[branch]
+```
+
+以上命令将服务器上的任何更新（假设有人这时候推送到服务器了）合并到你的当前分支。
+
+本章节以 https://github.com/tianqixin/runoob-git-test 为例。
+
+接下来我们在 Github 上点击 **README.md** 并在线修改它:
+
+![img](https://www.runoob.com/wp-content/uploads/2015/03/C5A6670F-202D-4F2C-8A63-07CEA37BB67A.jpg)
+
+然后我们在本地更新修改。
+
+```
+$ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:tianqixin/runoob-git-test
+   0205aab..febd8ed  master     -> origin/master
+```
+
+以上信息"0205aab..febd8ed master -> origin/master" 说明 master 分支已被更新，我们可以使用以下命令将更新同步到本地：
+
+```
+$ git merge origin/master
+Updating 0205aab..febd8ed
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+查看 README.md 文件内容：
+
+```
+$ cat README.md 
+# 菜鸟教程 Git 测试
+## 第一次修改内容
+```

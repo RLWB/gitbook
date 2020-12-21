@@ -1138,7 +1138,376 @@ Fast-forward
 <pre><code>$ cat README.md 
 # &#x83DC;&#x9E1F;&#x6559;&#x7A0B; Git &#x6D4B;&#x8BD5;
 ## &#x7B2C;&#x4E00;&#x6B21;&#x4FEE;&#x6539;&#x5185;&#x5BB9;
-</code></pre>
+</code></pre><h4 id="git-pull">git pull</h4>
+<p><strong>git pull</strong> &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x4EE3;&#x7801;&#x5E76;&#x5408;&#x5E76;&#x672C;&#x5730;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<p><strong>git pull</strong> &#x5176;&#x5B9E;&#x5C31;&#x662F; <strong>git fetch</strong> &#x548C; <strong>git merge FETCH_HEAD</strong> &#x7684;&#x7B80;&#x5199;&#x3002; &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>git pull &lt;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x540D;&gt; &lt;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x540D;&gt;:&lt;&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;&gt;
+</code></pre><h3 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h3>
+<p>&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>$ git pull
+$ git pull origin
+</code></pre><p>&#x5C06;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A; origin &#x7684; master &#x5206;&#x652F;&#x62C9;&#x53D6;&#x8FC7;&#x6765;&#xFF0C;&#x4E0E;&#x672C;&#x5730;&#x7684; brantest &#x5206;&#x652F;&#x5408;&#x5E76;&#x3002;</p>
+<pre><code>git pull origin master:brantest
+</code></pre><p>&#x5982;&#x679C;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x662F;&#x4E0E;&#x5F53;&#x524D;&#x5206;&#x652F;&#x5408;&#x5E76;&#xFF0C;&#x5219;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x3002;</p>
+<pre><code>git pull origin master
+</code></pre><p>&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x8868;&#x793A;&#xFF0C;&#x53D6;&#x56DE; origin/master &#x5206;&#x652F;&#xFF0C;&#x518D;&#x4E0E;&#x672C;&#x5730;&#x7684; brantest &#x5206;&#x652F;&#x5408;&#x5E76;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684; pull &#x64CD;&#x4F5C;&#x7528; fetch &#x8868;&#x793A;&#x4E3A;&#xFF1A;</p>
+<p>&#x4EE5;&#x6211;&#x7684; <a href="https://github.com/tianqixin/runoob-git-test" target="_blank">https://github.com/tianqixin/runoob-git-test</a> &#x4E3A;&#x4F8B;&#xFF0C;&#x8FDC;&#x7A0B;&#x8F7D;&#x5165;&#x5408;&#x5E76;&#x672C;&#x5730;&#x5206;&#x652F;&#x3002;</p>
+<pre><code>$ git remote -v  # &#x67E5;&#x770B;&#x4FE1;&#x606F;
+origin    https://github.com/tianqixin/runoob-git-test (fetch)
+origin    https://github.com/tianqixin/runoob-git-test (push)
+
+$ git pull origin master
+From https://github.com/tianqixin/runoob-git-test
+ * branch            master     -&gt; FETCH_HEAD
+Already up to date.
+</code></pre><p>&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x8868;&#x793A;&#xFF0C;&#x53D6;&#x56DE; origin/master &#x5206;&#x652F;&#xFF0C;&#x518D;&#x4E0E;&#x672C;&#x5730;&#x7684; master &#x5206;&#x652F;&#x5408;&#x5E76;&#x3002;</p>
+<h4 id="git-push">git push</h4>
+<p><strong>git push</strong> &#x547D;&#x7528;&#x4E8E;&#x4ECE;&#x5C06;&#x672C;&#x5730;&#x7684;&#x5206;&#x652F;&#x7248;&#x672C;&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5E76;&#x5408;&#x5E76;&#x3002;</p>
+<p><strong>git pull</strong> &#x5176;&#x5B9E;&#x5C31;&#x662F; <strong>git fetch</strong> &#x548C; <strong>git merge FETCH_HEAD</strong> &#x7684;&#x7B80;&#x5199;&#x3002; &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>git push &lt;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x540D;&gt; &lt;&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;&gt;:&lt;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x540D;&gt;
+</code></pre><p>&#x5982;&#x679C;&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x540D;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x5192;&#x53F7;&#xFF1A;</p>
+<pre><code>git push &lt;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x540D;&gt; &lt;&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;&gt;
+</code></pre><h3 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h3>
+<p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C06;&#x672C;&#x5730;&#x7684; master &#x5206;&#x652F;&#x63A8;&#x9001;&#x5230; origin &#x4E3B;&#x673A;&#x7684; master &#x5206;&#x652F;&#x3002;</p>
+<pre><code>$ git push origin master
+</code></pre><p>&#x76F8;&#x7B49;&#x4E8E;&#xFF1A;</p>
+<pre><code>$ git push origin master:master
+</code></pre><p>&#x5982;&#x679C;&#x672C;&#x5730;&#x7248;&#x672C;&#x4E0E;&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x6709;&#x5DEE;&#x5F02;&#xFF0C;&#x4F46;&#x53C8;&#x8981;&#x5F3A;&#x5236;&#x63A8;&#x9001;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; --force &#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code>git push --force origin master
+</code></pre><p>&#x5220;&#x9664;&#x4E3B;&#x673A;&#x4F46;&#x5206;&#x652F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; --delete &#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8868;&#x793A;&#x5220;&#x9664; origin &#x4E3B;&#x673A;&#x7684; master &#x5206;&#x652F;&#xFF1A;</p>
+<pre><code>git push origin --delete master
+</code></pre><p>&#x4EE5;&#x6211;&#x7684; <a href="https://github.com/tianqixin/runoob-git-test" target="_blank">https://github.com/tianqixin/runoob-git-test</a> &#x4E3A;&#x4F8B;&#xFF0C;&#x672C;&#x5730;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>$ touch runoob-test.txt      # &#x6DFB;&#x52A0;&#x6587;&#x4EF6;
+$ git add runoob-test.txt 
+$ git commit -m &quot;&#x6DFB;&#x52A0;&#x5230;&#x8FDC;&#x7A0B;&quot;
+master 69e702d] &#x6DFB;&#x52A0;&#x5230;&#x8FDC;&#x7A0B;
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 runoob-test.txt
+
+$ git push origin master    # &#x63A8;&#x9001;&#x5230; Github
+</code></pre><p>&#x5C06;&#x672C;&#x5730;&#x7684; master &#x5206;&#x652F;&#x63A8;&#x9001;&#x5230; origin &#x4E3B;&#x673A;&#x7684; master &#x5206;&#x652F;&#x3002;</p>
+<h1 id="git-&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;github">Git &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;(Github)</h1>
+<p>Git &#x5E76;&#x4E0D;&#x50CF; SVN &#x90A3;&#x6837;&#x6709;&#x4E2A;&#x4E2D;&#x5FC3;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5230;&#x7684; Git &#x547D;&#x4EE4;&#x90FD;&#x662F;&#x5728;&#x672C;&#x5730;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x901A;&#x8FC7; Git &#x5206;&#x4EAB;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x6216;&#x8005;&#x4E0E;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5408;&#x4F5C;&#x3002; &#x4F60;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x6570;&#x636E;&#x653E;&#x5230;&#x4E00;&#x53F0;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x80FD;&#x591F;&#x8FDE;&#x63A5;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;</p>
+<p>&#x672C;&#x4F8B;&#x4F7F;&#x7528;&#x4E86; Github &#x4F5C;&#x4E3A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5148;&#x9605;&#x8BFB;&#x6211;&#x4EEC;&#x7684; <a href="https://www.runoob.com/w3cnote/git-guide.html" target="_blank">Github &#x7B80;&#x660E;&#x6559;&#x7A0B;&#x3002;</a></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/Git-push-command.jpeg" alt="img"></p>
+<hr>
+<h2 id="&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x5E93;">&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x5E93;</h2>
+<p>&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;&#x6765;&#x5F15;&#x7528;,&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>git remote add [shortname] [url]
+</code></pre><p>&#x672C;&#x4F8B;&#x4EE5; Github &#x4E3A;&#x4F8B;&#x4F5C;&#x4E3A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709; Github &#x53EF;&#x4EE5;&#x5728;&#x5B98;&#x7F51; <a href="https://github.com/&#x6CE8;&#x518C;&#x3002;" target="_blank">https://github.com/&#x6CE8;&#x518C;&#x3002;</a></p>
+<p>&#x7531;&#x4E8E;&#x4F60;&#x7684;&#x672C;&#x5730; Git &#x4ED3;&#x5E93;&#x548C; GitHub &#x4ED3;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x4F20;&#x8F93;&#x662F;&#x901A;&#x8FC7;SSH&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x751F;&#x6210; SSH Key&#xFF1A;</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre><p>&#x540E;&#x9762;&#x7684; <strong>your_email@youremail.com</strong> &#x6539;&#x4E3A;&#x4F60;&#x5728; Github &#x4E0A;&#x6CE8;&#x518C;&#x7684;&#x90AE;&#x7BB1;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x8981;&#x6C42;&#x786E;&#x8BA4;&#x8DEF;&#x5F84;&#x548C;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x4E00;&#x8DEF;&#x56DE;&#x8F66;&#x5C31;&#x884C;&#x3002;</p>
+<p>&#x6210;&#x529F;&#x7684;&#x8BDD;&#x4F1A;&#x5728; <strong>~/</strong> &#x4E0B;&#x751F;&#x6210; <strong>.ssh</strong> &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8FDB;&#x53BB;&#xFF0C;&#x6253;&#x5F00; <strong>id_rsa.pub</strong>&#xFF0C;&#x590D;&#x5236;&#x91CC;&#x9762;&#x7684; <strong>key</strong>&#x3002;</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;429240967@qq.com&quot;
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/tianqixin/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase):    # &#x76F4;&#x63A5;&#x56DE;&#x8F66;
+Enter same passphrase again:                   # &#x76F4;&#x63A5;&#x56DE;&#x8F66;
+Your identification has been saved in /Users/tianqixin/.ssh/id_rsa.
+Your public key has been saved in /Users/tianqixin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:MDKVidPTDXIQoJwoqUmI4LBAsg5XByBlrOEzkxrwARI 429240967@qq.com
+The key&apos;s randomart image is:
++---[RSA 3072]----+
+|E*+.+=**oo       |
+|%Oo+oo=o. .      |
+|%**.o.o.         |
+|OO.  o o         |
+|+o+     S        |
+|.                |
+|                 |
+|                 |
+|                 |
++----[SHA256]-----+
+</code></pre><p>&#x56DE;&#x5230; github &#x4E0A;&#xFF0C;&#x8FDB;&#x5165; Account =&gt; Settings&#xFF08;&#x8D26;&#x6237;&#x914D;&#x7F6E;&#xFF09;&#x3002;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/48840BF0-992F-4CCC-A388-15CB74819D88.jpg" alt="img"></p>
+<p>&#x5DE6;&#x8FB9;&#x9009;&#x62E9; <strong>SSH and GPG keys</strong>&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB; <strong>New SSH key</strong> &#x6309;&#x94AE;,title &#x8BBE;&#x7F6E;&#x6807;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x4FBF;&#x586B;&#xFF0C;&#x7C98;&#x8D34;&#x5728;&#x4F60;&#x7535;&#x8111;&#x4E0A;&#x751F;&#x6210;&#x7684; key&#x3002;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/B0589847-A498-4415-8700-252BDE1B20C0.jpg" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/106AD534-A38A-47F3-88A3-B7BE3F2FEEF1.jpg" alt="img"></p>
+<p>&#x6DFB;&#x52A0;&#x6210;&#x529F;&#x540E;&#x754C;&#x9762;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/EC8F8872-091A-4CAB-90F2-616F34F350A9.jpg" alt="img"></p>
+<p>&#x4E3A;&#x4E86;&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>$ ssh -T git@github.com
+The authenticity of host &apos;github.com (52.74.223.119)&apos; can&apos;t be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes                   # &#x8F93;&#x5165; yes
+Warning: Permanently added &apos;github.com,52.74.223.119&apos; (RSA) to the list of known hosts.
+Hi tianqixin! You&apos;ve successfully authenticated, but GitHub does not provide shell access. # &#x6210;&#x529F;&#x4FE1;&#x606F;
+</code></pre><p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x5DF2;&#x6210;&#x529F;&#x8FDE;&#x4E0A; Github&#x3002;</p>
+<p>&#x4E4B;&#x540E;&#x767B;&#x5F55;&#x540E;&#x70B9;&#x51FB;&quot; New repository &quot; &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/github1.jpg" alt="img"></p>
+<p>&#x4E4B;&#x540E;&#x5728;&#x5728;Repository name &#x586B;&#x5165; runoob-git-test(&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x540D;) &#xFF0C;&#x5176;&#x4ED6;&#x4FDD;&#x6301;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#xFF0C;&#x70B9;&#x51FB;&quot;Create repository&quot;&#x6309;&#x94AE;&#xFF0C;&#x5C31;&#x6210;&#x529F;&#x5730;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Git&#x4ED3;&#x5E93;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/299CF000-7B6E-4BEC-B8C2-D9AEB053307B.jpg" alt="img"></p>
+<p>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x663E;&#x793A;&#x5982;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/1BCB4379-1A25-4C77-BB82-92B3E7185435.jpg" alt="img"></p>
+<p>&#x4EE5;&#x4E0A;&#x4FE1;&#x606F;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x8FD9;&#x4E2A;&#x4ED3;&#x5E93;&#x514B;&#x9686;&#x51FA;&#x65B0;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x7684;&#x5185;&#x5BB9;&#x63A8;&#x9001;&#x5230;GitHub&#x4ED3;&#x5E93;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x6839;&#x636E; GitHub &#x7684;&#x63D0;&#x793A;&#xFF0C;&#x5728;&#x672C;&#x5730;&#x7684;&#x4ED3;&#x5E93;&#x4E0B;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>$ mkdir runoob-git-test                     # &#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x76EE;&#x5F55;
+$ cd runoob-git-test/                       # &#x8FDB;&#x5165;&#x6D4B;&#x8BD5;&#x76EE;&#x5F55;
+$ echo &quot;# &#x83DC;&#x9E1F;&#x6559;&#x7A0B; Git &#x6D4B;&#x8BD5;&quot; &gt;&gt; README.md     # &#x521B;&#x5EFA; README.md &#x6587;&#x4EF6;&#x5E76;&#x5199;&#x5165;&#x5185;&#x5BB9;
+$ ls                                        # &#x67E5;&#x770B;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;
+README
+$ git init                                  # &#x521D;&#x59CB;&#x5316;
+$ git add README.md                         # &#x6DFB;&#x52A0;&#x6587;&#x4EF6;
+$ git commit -m &quot;&#x6DFB;&#x52A0; README.md &#x6587;&#x4EF6;&quot;        # &#x63D0;&#x4EA4;&#x5E76;&#x5907;&#x6CE8;&#x4FE1;&#x606F;
+[master (root-commit) 0205aab] &#x6DFB;&#x52A0; README.md &#x6587;&#x4EF6;
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+# &#x63D0;&#x4EA4;&#x5230; Github
+$ git remote add origin git@github.com:tianqixin/runoob-git-test.git
+$ git push -u origin master
+</code></pre><p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8BF7;&#x6839;&#x636E;&#x4F60;&#x5728;Github&#x6210;&#x529F;&#x521B;&#x5EFA;&#x65B0;&#x4ED3;&#x5E93;&#x7684;&#x5730;&#x65B9;&#x590D;&#x5236;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6839;&#x636E;&#x6211;&#x63D0;&#x4F9B;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x7684;Github&#x7528;&#x6237;&#x540D;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4ED3;&#x5E93;&#x540D;&#x4E5F;&#x4E0D;&#x4E00;&#x6837;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x8FD4;&#x56DE; Github &#x521B;&#x5EFA;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6587;&#x4EF6;&#x5DF2;&#x4E0A;&#x4F20;&#x5230; Github&#x4E0A;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/53CA927D-F36F-4A00-AFB2-5EAED05B535E.jpg" alt="img"></p>
+<hr>
+<h2 id="&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7684;&#x8FDC;&#x7A0B;&#x5E93;">&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7684;&#x8FDC;&#x7A0B;&#x5E93;</h2>
+<p>&#x8981;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x914D;&#x7F6E;&#x6709;&#x54EA;&#x4E9B;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>git remote
+</code></pre><h3 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h3>
+<pre><code>$ git remote
+origin
+$ git remote -v
+origin    git@github.com:tianqixin/runoob-git-test.git (fetch)
+origin    git@github.com:tianqixin/runoob-git-test.git (push)
+</code></pre><p>&#x6267;&#x884C;&#x65F6;&#x52A0;&#x4E0A; -v &#x53C2;&#x6570;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6BCF;&#x4E2A;&#x522B;&#x540D;&#x7684;&#x5B9E;&#x9645;&#x94FE;&#x63A5;&#x5730;&#x5740;&#x3002;</p>
+<hr>
+<h2 id="&#x63D0;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x63D0;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h2>
+<p>Git &#x6709;&#x4E24;&#x4E2A;&#x547D;&#x4EE4;&#x7528;&#x6765;&#x63D0;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x66F4;&#x65B0;&#x3002;</p>
+<p>1&#x3001;&#x4ECE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4E0B;&#x8F7D;&#x65B0;&#x5206;&#x652F;&#x4E0E;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code>git fetch
+</code></pre><p>&#x8BE5;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x9700;&#x8981;&#x6267;&#x884C; git merge &#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5230;&#x4F60;&#x6240;&#x5728;&#x7684;&#x5206;&#x652F;&#x3002;</p>
+<p>2&#x3001;&#x4ECE;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#x63D0;&#x53D6;&#x6570;&#x636E;&#x5E76;&#x5C1D;&#x8BD5;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF1A;</p>
+<pre><code>git merge
+</code></pre><p>&#x8BE5;&#x547D;&#x4EE4;&#x5C31;&#x662F;&#x5728;&#x6267;&#x884C; git fetch &#x4E4B;&#x540E;&#x7D27;&#x63A5;&#x7740;&#x6267;&#x884C; git merge &#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5230;&#x4F60;&#x6240;&#x5728;&#x7684;&#x4EFB;&#x610F;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x914D;&#x7F6E;&#x597D;&#x4E86;&#x4E00;&#x4E2A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x60F3;&#x8981;&#x63D0;&#x53D6;&#x66F4;&#x65B0;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x9996;&#x5148;&#x6267;&#x884C; <strong>git fetch [alias]</strong> &#x544A;&#x8BC9; Git &#x53BB;&#x83B7;&#x53D6;&#x5B83;&#x6709;&#x4F60;&#x6CA1;&#x6709;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x53EF;&#x4EE5;&#x6267;&#x884C; <strong>git merge [alias]/[branch]</strong> &#x4EE5;&#x5C06;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x66F4;&#x65B0;&#xFF08;&#x5047;&#x8BBE;&#x6709;&#x4EBA;&#x8FD9;&#x65F6;&#x5019;&#x63A8;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E86;&#xFF09;&#x5408;&#x5E76;&#x5230;&#x4F60;&#x7684;&#x5F53;&#x524D;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5728; Github &#x4E0A;&#x70B9;&#x51FB;&quot; README.md&quot; &#x5E76;&#x5728;&#x7EBF;&#x4FEE;&#x6539;&#x5B83;:</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/C5A6670F-202D-4F2C-8A63-07CEA37BB67A.jpg" alt="img"></p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x5730;&#x66F4;&#x65B0;&#x4FEE;&#x6539;&#x3002;</p>
+<pre><code>$ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:tianqixin/runoob-git-test
+   0205aab..febd8ed  master     -&gt; origin/master
+</code></pre><p>&#x4EE5;&#x4E0A;&#x4FE1;&#x606F;&quot;0205aab..febd8ed master -&gt; origin/master&quot; &#x8BF4;&#x660E; master &#x5206;&#x652F;&#x5DF2;&#x88AB;&#x66F4;&#x65B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C06;&#x66F4;&#x65B0;&#x540C;&#x6B65;&#x5230;&#x672C;&#x5730;&#xFF1A;</p>
+<pre><code>$ git merge origin/master
+Updating 0205aab..febd8ed
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+</code></pre><p>&#x67E5;&#x770B; README.md &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>$ cat README.md 
+# &#x83DC;&#x9E1F;&#x6559;&#x7A0B; Git &#x6D4B;&#x8BD5;
+## &#x7B2C;&#x4E00;&#x6B21;&#x4FEE;&#x6539;&#x5185;&#x5BB9;
+</code></pre><hr>
+<h2 id="&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h2>
+<p>&#x63A8;&#x9001;&#x4F60;&#x7684;&#x65B0;&#x5206;&#x652F;&#x4E0E;&#x6570;&#x636E;&#x5230;&#x67D0;&#x4E2A;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#x547D;&#x4EE4;:</p>
+<pre><code>git push [alias] [branch]
+</code></pre><p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x5C06;&#x4F60;&#x7684; [branch] &#x5206;&#x652F;&#x63A8;&#x9001;&#x6210;&#x4E3A; [alias] &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4E0A;&#x7684; [branch] &#x5206;&#x652F;&#xFF0C;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code>$ touch runoob-test.txt      # &#x6DFB;&#x52A0;&#x6587;&#x4EF6;
+$ git add runoob-test.txt 
+$ git commit -m &quot;&#x6DFB;&#x52A0;&#x5230;&#x8FDC;&#x7A0B;&quot;
+master 69e702d] &#x6DFB;&#x52A0;&#x5230;&#x8FDC;&#x7A0B;
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 runoob-test.txt
+
+$ git push origin master    # &#x63A8;&#x9001;&#x5230; Github
+</code></pre><p>&#x91CD;&#x65B0;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x7684; Github &#x4ED3;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x4E0A;&#x6765;&#x4E86;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/79A84530-7DC0-4D25-9F83-8776433A4C32.jpg" alt="img"></p>
+<hr>
+<h2 id="&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h2>
+<p>&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>git remote rm [&#x522B;&#x540D;]
+</code></pre><h3 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h3>
+<pre><code>$ git remote -v
+origin    git@github.com:tianqixin/runoob-git-test.git (fetch)
+origin    git@github.com:tianqixin/runoob-git-test.git (push)
+
+# &#x6DFB;&#x52A0;&#x4ED3;&#x5E93; origin2
+$ git remote add origin2 git@github.com:tianqixin/runoob-git-test.git
+
+$ git remote -v
+origin    git@github.com:tianqixin/runoob-git-test.git (fetch)
+origin    git@github.com:tianqixin/runoob-git-test.git (push)
+origin2    git@github.com:tianqixin/runoob-git-test.git (fetch)
+origin2    git@github.com:tianqixin/runoob-git-test.git (push)
+
+# &#x5220;&#x9664;&#x4ED3;&#x5E93; origin2
+$ git remote rm origin2
+$ git remote -v
+origin    git@github.com:tianqixin/runoob-git-test.git (fetch)
+origin    git@github.com:tianqixin/runoob-git-test.git (push)
+</code></pre><h4 id="github">Github</h4>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x4E00;&#x679A;Coder&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x4E0D;&#x77E5;&#x9053;Github&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x89C9;&#x7684;&#x4F60;&#x5C31;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x83DC;&#x9E1F;&#x7EA7;&#x522B;&#x7684;Coder&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x538B;&#x6839;&#x4E0D;&#x662F;&#x771F;&#x6B63;Coder&#xFF0C;&#x4F60;&#x53EA;&#x662F;&#x4E00;&#x4E2A;Code&#x642C;&#x8FD0;&#x5DE5;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x4F60;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5728;&#x8BFB;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E86;&#xFF0C;&#x6211;&#x89C9;&#x7684;&#x4F60;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;Github&#x4E86;&#x3002;</p>
+<p><strong>&#x6B63;&#x662F;Github&#xFF0C;&#x8BA9;&#x793E;&#x4F1A;&#x5316;&#x7F16;&#x7A0B;&#x6210;&#x4E3A;&#x73B0;&#x5B9E;&#x3002;</strong></p>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;-github">&#x4EC0;&#x4E48;&#x662F; Github?</h3>
+<p>github&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;git&#x7684;&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#xFF0C;&#x4ED8;&#x8D39;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5EFA;&#x79C1;&#x4EBA;&#x4ED3;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x7684;&#x514D;&#x8D39;&#x7528;&#x6237;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x516C;&#x5171;&#x4ED3;&#x5E93;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4EE3;&#x7801;&#x8981;&#x516C;&#x5F00;&#x3002;</p>
+<p>Github &#x7531;Chris Wanstrath, PJ Hyett &#x4E0E;Tom Preston-Werner&#x4E09;&#x4F4D;&#x5F00;&#x53D1;&#x8005;&#x5728;2008&#x5E74;4&#x6708;&#x521B;&#x529E;&#x3002;&#x8FC4;&#x4ECA;&#x62E5;&#x6709;59&#x540D;&#x5168;&#x804C;&#x5458;&#x5DE5;&#xFF0C;&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x57FA;&#x4E8E;git&#x7684;&#x7248;&#x672C;&#x6258;&#x7BA1;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x770B;&#x6765;&#xFF0C;GitHub&#x8FD9;&#x573A;&#x5192;&#x9669;&#x5DF2;&#x7ECF;&#x80DC;&#x51FA;&#x3002;&#x6839;&#x636E;&#x6765;&#x81EA;&#x7EF4;&#x57FA;&#x767E;&#x79D1;&#x5173;&#x4E8E;GitHub&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F62;&#x8C61;&#x5730;&#x770B;&#x51FA;GitHub&#x7684;&#x589E;&#x957F;&#x901F;&#x5EA6;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/05/github-repos.png" alt="img"></p>
+<p><img src="imgs/github.png" style="zoom:100%;"></p>
+<h3 id="&#x6CE8;&#x518C;&#x8D26;&#x6237;&#x4EE5;&#x53CA;&#x521B;&#x5EFA;&#x4ED3;&#x5E93;">&#x6CE8;&#x518C;&#x8D26;&#x6237;&#x4EE5;&#x53CA;&#x521B;&#x5EFA;&#x4ED3;&#x5E93;</h3>
+<p>&#x8981;&#x60F3;&#x4F7F;&#x7528;github&#x7B2C;&#x4E00;&#x6B65;&#x5F53;&#x7136;&#x662F;&#x6CE8;&#x518C;github&#x8D26;&#x53F7;&#x4E86;&#xFF0C; github&#x5B98;&#x7F51;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/&#x3002;" target="_blank">https://github.com/&#x3002;</a> &#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#x4E86;&#xFF08;&#x514D;&#x8D39;&#x7528;&#x6237;&#x53EA;&#x80FD;&#x5EFA;&#x516C;&#x5171;&#x4ED3;&#x5E93;&#xFF09;&#xFF0C;Create a New Repository&#xFF0C;&#x586B;&#x597D;&#x540D;&#x79F0;&#x540E;Create&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x4ED3;&#x5E93;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;git&#x7684;&#x7B80;&#x5355;&#x6559;&#x7A0B;&#x3002;</p>
+<h3 id="github-&#x5B89;&#x88C5;">Github &#x5B89;&#x88C5;</h3>
+<ul>
+<li><a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3" target="_blank">&#x4E0B;&#x8F7D; git OSX &#x7248;</a></li>
+<li><a href="http://msysgit.github.io/" target="_blank">&#x4E0B;&#x8F7D; git Windows &#x7248;</a></li>
+<li><a href="http://book.git-scm.com/2_installing_git.html" target="_blank">&#x4E0B;&#x8F7D; git Linux &#x7248;</a></li>
+</ul>
+<h3 id="&#x914D;&#x7F6E;git">&#x914D;&#x7F6E;Git</h3>
+<p>&#x9996;&#x5148;&#x5728;&#x672C;&#x5730;&#x521B;&#x5EFA;<code>ssh key&#xFF1B;</code></p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
+</code></pre><p>&#x540E;&#x9762;&#x7684;<code>your_email@youremail.com</code>&#x6539;&#x4E3A;&#x4F60;&#x5728;github&#x4E0A;&#x6CE8;&#x518C;&#x7684;&#x90AE;&#x7BB1;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x8981;&#x6C42;&#x786E;&#x8BA4;&#x8DEF;&#x5F84;&#x548C;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x4E00;&#x8DEF;&#x56DE;&#x8F66;&#x5C31;&#x884C;&#x3002;&#x6210;&#x529F;&#x7684;&#x8BDD;&#x4F1A;&#x5728;<code>~/</code>&#x4E0B;&#x751F;&#x6210;<code>.ssh</code>&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8FDB;&#x53BB;&#xFF0C;&#x6253;&#x5F00;<code>id_rsa.pub</code>&#xFF0C;&#x590D;&#x5236;&#x91CC;&#x9762;&#x7684;<code>key</code>&#x3002;</p>
+<p>&#x56DE;&#x5230;github&#x4E0A;&#xFF0C;&#x8FDB;&#x5165; Account Settings&#xFF08;&#x8D26;&#x6237;&#x914D;&#x7F6E;&#xFF09;&#xFF0C;&#x5DE6;&#x8FB9;&#x9009;&#x62E9;SSH Keys&#xFF0C;Add SSH Key,title&#x968F;&#x4FBF;&#x586B;&#xFF0C;&#x7C98;&#x8D34;&#x5728;&#x4F60;&#x7535;&#x8111;&#x4E0A;&#x751F;&#x6210;&#x7684;key&#x3002;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/05/github-account.jpg" alt="img"></p>
+<p>&#x4E3A;&#x4E86;&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF0C;&#x5728;git bash&#x4E0B;&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code>$ ssh -T git@github.com
+</code></pre><p>&#x5982;&#x679C;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x7684;&#x4F1A;&#x63D0;&#x793A;&#x662F;&#x5426;continue&#xFF0C;&#x8F93;&#x5165;yes&#x5C31;&#x4F1A;&#x770B;&#x5230;&#xFF1A;You&apos;ve successfully authenticated, but GitHub does not provide shell access &#x3002;&#x8FD9;&#x5C31;&#x8868;&#x793A;&#x5DF2;&#x6210;&#x529F;&#x8FDE;&#x4E0A;github&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x628A;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4F20;&#x5230;github&#x4E0A;&#x53BB;&#xFF0C;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#x8FD8;&#x9700;&#x8981;&#x8BBE;&#x7F6E;username&#x548C;email&#xFF0C;&#x56E0;&#x4E3A;github&#x6BCF;&#x6B21;commit&#x90FD;&#x4F1A;&#x8BB0;&#x5F55;&#x4ED6;&#x4EEC;&#x3002;</p>
+<pre><code>$ git config --global user.name &quot;your name&quot;
+$ git config --global user.email &quot;your_email@youremail.com&quot;
+</code></pre><p>&#x8FDB;&#x5165;&#x8981;&#x4E0A;&#x4F20;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x53F3;&#x952E;git bash&#xFF0C;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x5730;&#x5740;&#xFF1A;</p>
+<pre><code>$ git remote add origin git@github.com:yourName/yourRepo.git
+</code></pre><p>&#x540E;&#x9762;&#x7684;yourName&#x548C;yourRepo&#x8868;&#x793A;&#x4F60;&#x518D;github&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x521A;&#x624D;&#x65B0;&#x5EFA;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x52A0;&#x5B8C;&#x4E4B;&#x540E;&#x8FDB;&#x5165;.git&#xFF0C;&#x6253;&#x5F00;config&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x591A;&#x51FA;&#x4E00;&#x4E2A;remote &quot;origin&quot;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x521A;&#x624D;&#x6DFB;&#x52A0;&#x7684;&#x8FDC;&#x7A0B;&#x5730;&#x5740;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;config&#x6765;&#x914D;&#x7F6E;&#x8FDC;&#x7A0B;&#x5730;&#x5740;&#x3002;</p>
+<h3 id="&#x68C0;&#x51FA;&#x4ED3;&#x5E93;">&#x68C0;&#x51FA;&#x4ED3;&#x5E93;</h3>
+<p>&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x7684;&#x514B;&#x9686;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code>git clone /path/to/repository
+</code></pre><p>&#x5982;&#x679C;&#x662F;&#x8FDC;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x4F60;&#x7684;&#x547D;&#x4EE4;&#x4F1A;&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code>git clone username@host:/path/to/repository
+</code></pre><h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
+<p>&#x4F60;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x7531; git &#x7EF4;&#x62A4;&#x7684;&#x4E09;&#x68F5;&quot;&#x6811;&quot;&#x7EC4;&#x6210;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x4F60;&#x7684; <code>&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</code>&#xFF0C;&#x5B83;&#x6301;&#x6709;&#x5B9E;&#x9645;&#x6587;&#x4EF6;&#xFF1B;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F; <code>&#x6682;&#x5B58;&#x533A;&#xFF08;Index&#xFF09;</code>&#xFF0C;&#x5B83;&#x50CF;&#x4E2A;&#x7F13;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x4E34;&#x65F6;&#x4FDD;&#x5B58;&#x4F60;&#x7684;&#x6539;&#x52A8;&#xFF1B;&#x6700;&#x540E;&#x662F; <code>HEAD</code>&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x4F60;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x63D0;&#x51FA;&#x66F4;&#x6539;&#xFF08;&#x628A;&#x5B83;&#x4EEC;&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;
+<code>git add &lt;filename&gt;</code>
+<code>git add *</code>
+&#x8FD9;&#x662F; git &#x57FA;&#x672C;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#xFF1B;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x5B9E;&#x9645;&#x63D0;&#x4EA4;&#x6539;&#x52A8;&#xFF1A;
+<code>git commit -m &quot;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&quot;</code>
+&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x7684;&#x6539;&#x52A8;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x5230;&#x4E86; <strong>HEAD</strong>&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6CA1;&#x5230;&#x4F60;&#x7684;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#x3002;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/05/trees.png" alt="img"></p>
+<h3 id="&#x63A8;&#x9001;&#x6539;&#x52A8;">&#x63A8;&#x9001;&#x6539;&#x52A8;</h3>
+<p>&#x4F60;&#x7684;&#x6539;&#x52A8;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x5728;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x7684; <strong>HEAD</strong> &#x4E2D;&#x4E86;&#x3002;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x6539;&#x52A8;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#xFF1A;
+<code>git push origin master</code>
+&#x53EF;&#x4EE5;&#x628A; <em>master</em> &#x6362;&#x6210;&#x4F60;&#x60F3;&#x8981;&#x63A8;&#x9001;&#x7684;&#x4EFB;&#x4F55;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x6CA1;&#x6709;&#x514B;&#x9686;&#x73B0;&#x6709;&#x4ED3;&#x5E93;&#xFF0C;&#x5E76;&#x6B32;&#x5C06;&#x4F60;&#x7684;&#x4ED3;&#x5E93;&#x8FDE;&#x63A5;&#x5230;&#x67D0;&#x4E2A;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x6DFB;&#x52A0;&#xFF1A;
+<code>git remote add origin &lt;server&gt;</code>
+&#x5982;&#x6B64;&#x4F60;&#x5C31;&#x80FD;&#x591F;&#x5C06;&#x4F60;&#x7684;&#x6539;&#x52A8;&#x63A8;&#x9001;&#x5230;&#x6240;&#x6DFB;&#x52A0;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x53BB;&#x4E86;&#x3002;</p>
+<h3 id="&#x5206;&#x652F;">&#x5206;&#x652F;</h3>
+<p>&#x5206;&#x652F;&#x662F;&#x7528;&#x6765;&#x5C06;&#x7279;&#x6027;&#x5F00;&#x53D1;&#x7EDD;&#x7F18;&#x5F00;&#x6765;&#x7684;&#x3002;&#x5728;&#x4F60;&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#x7684;&#x65F6;&#x5019;&#xFF0C;<em>master</em> &#x662F;&quot;&#x9ED8;&#x8BA4;&#x7684;&quot;&#x5206;&#x652F;&#x3002;&#x5728;&#x5176;&#x4ED6;&#x5206;&#x652F;&#x4E0A;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#xFF0C;&#x5B8C;&#x6210;&#x540E;&#x518D;&#x5C06;&#x5B83;&#x4EEC;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x4E0A;&#x3002;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/05/branches.png" alt="img"></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EB;&#x505A;&quot;feature_x&quot;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x5E76;&#x5207;&#x6362;&#x8FC7;&#x53BB;&#xFF1A;
+<code>git checkout -b feature_x</code>
+&#x5207;&#x6362;&#x56DE;&#x4E3B;&#x5206;&#x652F;&#xFF1A;
+<code>git checkout master</code>
+&#x518D;&#x628A;&#x65B0;&#x5EFA;&#x7684;&#x5206;&#x652F;&#x5220;&#x6389;&#xFF1A;
+<code>git branch -d feature_x</code>
+&#x9664;&#x975E;&#x4F60;&#x5C06;&#x5206;&#x652F;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#xFF0C;&#x4E0D;&#x7136;&#x8BE5;&#x5206;&#x652F;&#x5C31;&#x662F; <em>&#x4E0D;&#x4E3A;&#x4ED6;&#x4EBA;&#x6240;&#x89C1;&#x7684;</em>&#xFF1A;
+<code>git push origin &lt;branch&gt;</code></p>
+<h3 id="&#x66F4;&#x65B0;&#x4E0E;&#x5408;&#x5E76;">&#x66F4;&#x65B0;&#x4E0E;&#x5408;&#x5E76;</h3>
+<p>&#x8981;&#x66F4;&#x65B0;&#x4F60;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x81F3;&#x6700;&#x65B0;&#x6539;&#x52A8;&#xFF0C;&#x6267;&#x884C;&#xFF1A;
+<code>git pull</code>
+&#x4EE5;&#x5728;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E2D; <em>&#x83B7;&#x53D6;&#xFF08;fetch&#xFF09;</em> &#x5E76; <em>&#x5408;&#x5E76;&#xFF08;merge&#xFF09;</em> &#x8FDC;&#x7AEF;&#x7684;&#x6539;&#x52A8;&#x3002;
+&#x8981;&#x5408;&#x5E76;&#x5176;&#x4ED6;&#x5206;&#x652F;&#x5230;&#x4F60;&#x7684;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF08;&#x4F8B;&#x5982; master&#xFF09;&#xFF0C;&#x6267;&#x884C;&#xFF1A;
+<code>git merge &lt;branch&gt;</code>
+&#x5728;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;git &#x90FD;&#x4F1A;&#x5C1D;&#x8BD5;&#x53BB;&#x81EA;&#x52A8;&#x5408;&#x5E76;&#x6539;&#x52A8;&#x3002;&#x9057;&#x61BE;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x5E76;&#x975E;&#x6BCF;&#x6B21;&#x90FD;&#x6210;&#x529F;&#xFF0C;&#x5E76;&#x53EF;&#x80FD;&#x51FA;&#x73B0;<em>&#x51B2;&#x7A81;&#xFF08;conflicts&#xFF09;</em>&#x3002; &#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x4F60;&#x4FEE;&#x6539;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x6765;&#x624B;&#x52A8;&#x5408;&#x5E76;&#x8FD9;&#x4E9B;<em>&#x51B2;&#x7A81;&#xFF08;conflicts&#xFF09;</em>&#x3002;&#x6539;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x6807;&#x8BB0;&#x4E3A;&#x5408;&#x5E76;&#x6210;&#x529F;&#xFF1A;
+<code>git add &lt;filename&gt;</code>
+&#x5728;&#x5408;&#x5E76;&#x6539;&#x52A8;&#x4E4B;&#x524D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x9884;&#x89C8;&#x5DEE;&#x5F02;&#xFF1A;
+<code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code></p>
+<h3 id="&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</h3>
+<p>&#x4E3A;&#x8F6F;&#x4EF6;&#x53D1;&#x5E03;&#x521B;&#x5EFA;&#x6807;&#x7B7E;&#x662F;&#x63A8;&#x8350;&#x7684;&#x3002;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x65E9;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5728; SVN &#x4E2D;&#x4E5F;&#x6709;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <em>1.0.0</em> &#x7684;&#x6807;&#x7B7E;&#xFF1A;
+<code>git tag 1.0.0 1b2e1d63ff</code>
+<em>1b2e1d63ff</em> &#x662F;&#x4F60;&#x60F3;&#x8981;&#x6807;&#x8BB0;&#x7684;&#x63D0;&#x4EA4; ID &#x7684;&#x524D; 10 &#x4F4D;&#x5B57;&#x7B26;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x63D0;&#x4EA4; ID&#xFF1A;
+<code>git log</code>
+&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C11;&#x4E00;&#x70B9;&#x7684;&#x63D0;&#x4EA4; ID &#x524D;&#x51E0;&#x4F4D;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x7684;&#x6307;&#x5411;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6027;&#x3002;</p>
+<h3 id="&#x66FF;&#x6362;&#x672C;&#x5730;&#x6539;&#x52A8;">&#x66FF;&#x6362;&#x672C;&#x5730;&#x6539;&#x52A8;</h3>
+<p>&#x5047;&#x5982;&#x4F60;&#x64CD;&#x4F5C;&#x5931;&#x8BEF;&#xFF08;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x6700;&#x597D;&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x53D1;&#x751F;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x66FF;&#x6362;&#x6389;&#x672C;&#x5730;&#x6539;&#x52A8;&#xFF1A;
+<code>git checkout -- &lt;filename&gt;</code>
+&#x6B64;&#x547D;&#x4EE4;&#x4F1A;&#x4F7F;&#x7528; HEAD &#x4E2D;&#x7684;&#x6700;&#x65B0;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x6389;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5DF2;&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6539;&#x52A8;&#x4EE5;&#x53CA;&#x65B0;&#x6587;&#x4EF6;&#x90FD;&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x5047;&#x5982;&#x4F60;&#x60F3;&#x4E22;&#x5F03;&#x4F60;&#x5728;&#x672C;&#x5730;&#x7684;&#x6240;&#x6709;&#x6539;&#x52A8;&#x4E0E;&#x63D0;&#x4EA4;&#xFF0C;&#x53EF;&#x4EE5;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5386;&#x53F2;&#xFF0C;&#x5E76;&#x5C06;&#x4F60;&#x672C;&#x5730;&#x4E3B;&#x5206;&#x652F;&#x6307;&#x5411;&#x5B83;&#xFF1A;
+<code>git fetch origin</code>
+<code>git reset --hard origin/master</code></p>
+<h3 id="&#x5B9E;&#x7528;&#x5C0F;&#x8D34;&#x58EB;">&#x5B9E;&#x7528;&#x5C0F;&#x8D34;&#x58EB;</h3>
+<p>&#x5185;&#x5EFA;&#x7684;&#x56FE;&#x5F62;&#x5316; git&#xFF1A;
+<code>gitk</code>
+&#x5F69;&#x8272;&#x7684; git &#x8F93;&#x51FA;&#xFF1A;
+<code>git config color.ui true</code>
+&#x663E;&#x793A;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x6BCF;&#x4E2A;&#x63D0;&#x4EA4;&#x7684;&#x4FE1;&#x606F;&#x53EA;&#x663E;&#x793A;&#x4E00;&#x884C;&#xFF1A;
+<code>git config format.pretty oneline</code>
+&#x4EA4;&#x4E92;&#x5F0F;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x6682;&#x5B58;&#x533A;&#xFF1A;
+<code>git add -i</code></p>
+<h1 id="git-gitee">Git Gitee</h1>
+<p>&#x5927;&#x5BB6;&#x90FD;&#x77E5;&#x9053;&#x56FD;&#x5185;&#x8BBF;&#x95EE; Github &#x901F;&#x5EA6;&#x6BD4;&#x8F83;&#x6162;&#xFF0C;&#x5F88;&#x5F71;&#x54CD;&#x6211;&#x4EEC;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x4F53;&#x9A8C;&#x5230; Git &#x98DE;&#x4E00;&#x822C;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x56FD;&#x5185;&#x7684; Git &#x6258;&#x7BA1;&#x670D;&#x52A1;&#x2014;&#x2014;<a href="https://gitee.com/?utm_source=remote_blog_cnjc" target="_blank">Gitee&#xFF08;gitee.com&#xFF09;</a>&#x3002;</p>
+<p>Gitee &#x63D0;&#x4F9B;&#x514D;&#x8D39;&#x7684; Git &#x4ED3;&#x5E93;&#xFF0C;&#x8FD8;&#x96C6;&#x6210;&#x4E86;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x68C0;&#x6D4B;&#x3001;&#x9879;&#x76EE;&#x6F14;&#x793A;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5BF9;&#x4E8E;&#x56E2;&#x961F;&#x534F;&#x4F5C;&#x5F00;&#x53D1;&#xFF0C;Gitee &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x3001;&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x3001;&#x6587;&#x6863;&#x7BA1;&#x7406;&#x7684;&#x670D;&#x52A1;&#xFF0C;5 &#x4EBA;&#x4EE5;&#x4E0B;&#x5C0F;&#x56E2;&#x961F;&#x514D;&#x8D39;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x4F7F;&#x7528; Gitee&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x672C;&#x5730; Git &#x4ED3;&#x5E93;&#x548C; Gitee &#x4ED3;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x4F20;&#x8F93;&#x662F;&#x901A;&#x8FC7;SSH&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;&#x3002;</p>
+<p><strong>1&#x3001;&#x6211;&#x4EEC;&#x5148;&#x5728; <a href="https://gitee.com/?utm_source=remote_blog_cnjc" target="_blank">Gitee</a> &#x4E0A;&#x6CE8;&#x518C;&#x8D26;&#x53F7;&#x5E76;&#x767B;&#x5F55;&#x540E;&#xFF0C;&#x7136;&#x540E;&#x4E0A;&#x4F20;&#x81EA;&#x5DF1;&#x7684; SSH &#x516C;&#x94A5;&#x3002;</strong></p>
+<p>&#x6211;&#x4EEC;&#x5728; Git Github &#x7AE0;&#x8282;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#x4E86;&#x81EA;&#x5DF1;&#x7684; SSH &#x516C;&#x94A5;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x4E0B;&#x7684; ~/.ssh/id_rsa.pub &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x7C98;&#x8D34; Gitee &#x4E0A;&#x3002;</p>
+<p>&#x9009;&#x62E9;&#x53F3;&#x4E0A;&#x89D2;&#x7528;&#x6237;&#x5934;&#x50CF; -&gt; &#x8BBE;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; &quot;SSH&#x516C;&#x94A5;&quot;&#xFF0C;&#x586B;&#x5199;&#x4E00;&#x4E2A;&#x4FBF;&#x4E8E;&#x8BC6;&#x522B;&#x7684;&#x6807;&#x9898;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x4E0B;&#x7684; .ssh/id_rsa.pub &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x7C98;&#x8D34;&#x8FDB;&#x53BB;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee1.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee2.png" alt="img"></p>
+<p>&#x6210;&#x529F;&#x6DFB;&#x52A0;&#x540E;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee3.png" alt="img"></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x3002;</p>
+<p>&#x70B9;&#x51FB;&#x53F3;&#x4E0A;&#x89D2;&#x7684; <strong>+</strong> &#x53F7;&#xFF0C;&#x65B0;&#x5EFA;&#x4ED3;&#x5E93;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee4.png" alt="img"></p>
+<p>&#x7136;&#x540E;&#x6DFB;&#x52A0;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee5.png" alt="img"></p>
+<p>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee6.png" alt="img"></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x770B;&#x4E0B;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee7.png" alt="img"></p>
+<p>&#x9879;&#x76EE;&#x540D;&#x79F0;&#x6700;&#x597D;&#x4E0E;&#x672C;&#x5730;&#x5E93;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x5730;&#x5E93;&#x4E0A;&#x4F7F;&#x7528;&#x547D;&#x4EE4; <strong>git remote add</strong> &#x628A;&#x5B83;&#x548C; Gitee &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#x5173;&#x8054;&#xFF1A;</p>
+<pre><code>git remote add origin git@gitee.com:imnoob/runoob-test.git
+</code></pre><p>&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5730;&#x7528; git push &#x548C; git pull &#x63A8;&#x9001;&#x4E86;&#xFF01;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x4F7F;&#x7528;&#x547D;&#x4EE4; git remote add &#x65F6;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre><code>git remote add origin git@gitee.com:imnoob/runoob-test.git
+fatal: remote origin already exists.
+</code></pre><p>&#x8FD9;&#x8BF4;&#x660E;&#x672C;&#x5730;&#x5E93;&#x5DF2;&#x7ECF;&#x5173;&#x8054;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x53EB; origin &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x7528; <strong>git remote -v</strong> &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5E93;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>git remote -v
+origin    git@github.com:tianqixin/runoob.git (fetch)
+origin    git@github.com:tianqixin/runoob.git (push)
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x672C;&#x5730;&#x5E93;&#x5DF2;&#x7ECF;&#x5173;&#x8054;&#x4E86; origin &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#xFF0C;&#x8BE5;&#x8FDC;&#x7A0B;&#x5E93;&#x6307;&#x5411; GitHub&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x5DF2;&#x6709;&#x7684; GitHub &#x8FDC;&#x7A0B;&#x5E93;&#xFF1A;</p>
+<pre><code>git remote rm origin
+</code></pre><p>&#x518D;&#x5173;&#x8054; Gitee &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#xFF08;&#x6CE8;&#x610F;&#x8DEF;&#x5F84;&#x4E2D;&#x9700;&#x8981;&#x586B;&#x5199;&#x6B63;&#x786E;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF09;&#xFF1A;</p>
+<pre><code>git remote add origin git@gitee.com:imnoob/runoob-test.git
+</code></pre><p>&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5E93;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>git remote -v
+origin    git@gitee.com:imnoob/runoob-test.git (fetch)
+origin    git@gitee.com:imnoob/runoob-test.git (push)
+</code></pre><p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;origin &#x5DF2;&#x7ECF;&#x88AB;&#x5173;&#x8054;&#x5230; Gitee &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#x4E86;&#x3002;</p>
+<p>&#x901A;&#x8FC7; git push &#x547D;&#x4EE4;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x672C;&#x5730;&#x5E93;&#x63A8;&#x9001;&#x5230; Gitee &#x4E0A;&#x3002;</p>
+<p>&#x6709;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x53C8;&#x8981;&#x95EE;&#x4E86;&#xFF0C;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5E93;&#x80FD;&#x4E0D;&#x80FD;&#x65E2;&#x5173;&#x8054; GitHub&#xFF0C;&#x53C8;&#x5173;&#x8054; Gitee &#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; git &#x672C;&#x8EAB;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x6B65;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x540C;&#x6B65;&#x5230;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6CE8;&#x610F;&#xFF0C;git &#x7ED9;&#x8FDC;&#x7A0B;&#x5E93;&#x8D77;&#x7684;&#x9ED8;&#x8BA4;&#x540D;&#x79F0;&#x662F; origin&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x540D;&#x79F0;&#x6765;&#x6807;&#x8BC6;&#x4E0D;&#x540C;&#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#x3002;</p>
+<p>&#x4ECD;&#x7136;&#x4EE5; runoob-test &#x672C;&#x5730;&#x5E93;&#x4E3A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x5220;&#x9664;&#x5DF2;&#x5173;&#x8054;&#x7684;&#x540D;&#x4E3A; origin &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#xFF1A;</p>
+<pre><code>git remote rm origin
+</code></pre><p>&#x7136;&#x540E;&#xFF0C;&#x5148;&#x5173;&#x8054; GitHub &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#xFF1A;</p>
+<pre><code>git remote add github git@github.com:tianqixin/runoob-git-test.git
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x8FDC;&#x7A0B;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x53EB; github&#xFF0C;&#x4E0D;&#x53EB; origin &#x4E86;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x518D;&#x5173;&#x8054; Gitee &#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#xFF1A;</p>
+<pre><code>git remote add gitee git@gitee.com:imnoob/runoob-test.git
+</code></pre><p>&#x540C;&#x6837;&#x6CE8;&#x610F;&#xFF0C;&#x8FDC;&#x7A0B;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x53EB; gitee&#xFF0C;&#x4E0D;&#x53EB; origin&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x7528; git remote -v &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5E93;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E24;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#xFF1A;</p>
+<pre><code>git remote -v
+gitee    git@gitee.com:imnoob/runoob-test.git (fetch)
+gitee    git@gitee.com:imnoob/runoob-test.git (push)
+github    git@github.com:tianqixin/runoob.git (fetch)
+github    git@github.com:tianqixin/runoob.git (push)
+</code></pre><p>&#x5982;&#x679C;&#x8981;&#x63A8;&#x9001;&#x5230; GitHub&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>git push github master
+</code></pre><p>&#x5982;&#x679C;&#x8981;&#x63A8;&#x9001;&#x5230; Gitee&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>git push gitee master
+</code></pre><p>&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x672C;&#x5730;&#x5E93;&#x5C31;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x4E0E;&#x591A;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#x4E92;&#x76F8;&#x540C;&#x6B65;&#xFF1A;</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/03/gitee8.png" alt="img"></p>
+
                                 
                                 </section>
                             
@@ -1177,7 +1546,7 @@ Fast-forward
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git 教程","level":"1.5","depth":1,"next":{"title":"每日一题","level":"1.6","depth":1,"ref":"","articles":[{"title":"前端性能优化","level":"1.6.1","depth":2,"path":"每日一题/20201126.md","ref":"每日一题/20201126.md","articles":[]},{"title":"合集","level":"1.6.2","depth":2,"path":"每日一题/20201127.md","ref":"每日一题/20201127.md","articles":[]},{"title":"合集 02","level":"1.6.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]}]},"previous":{"title":"linux常用命令","level":"1.4","depth":1,"path":"Linux.md","ref":"Linux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GIT.md","mtime":"2020-12-21T16:19:08.667Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-21T16:19:34.679Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git 教程","level":"1.5","depth":1,"next":{"title":"每日一题","level":"1.6","depth":1,"ref":"","articles":[{"title":"前端性能优化","level":"1.6.1","depth":2,"path":"每日一题/20201126.md","ref":"每日一题/20201126.md","articles":[]},{"title":"合集","level":"1.6.2","depth":2,"path":"每日一题/20201127.md","ref":"每日一题/20201127.md","articles":[]},{"title":"合集 02","level":"1.6.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]}]},"previous":{"title":"linux常用命令","level":"1.4","depth":1,"path":"Linux.md","ref":"Linux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GIT.md","mtime":"2020-12-21T16:46:44.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-21T16:47:15.644Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

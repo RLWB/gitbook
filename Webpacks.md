@@ -249,3 +249,565 @@ module.exports = {
 npm run start
 ```
 
+#### 3.4打包图片资源
+
+##### 3.4.1 创建文件
+
+​	jpg，png
+
+##### 3.4.2 下载安装loader包
+
+```
+npm install --save-dev html-loader url-loader file-loader
+```
+
+##### 3.4.3 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.less$/,
+        // 要使用多个 loader 处理用 use
+        use: ["style-loader", "css-loader", "less-loader"],
+      },
+      {
+        // 问题：默认处理不了 html 中 img 图片
+        // 处理图片资源 test: /\.(jpg|png|gif)$/,
+        // 使用一个 loader
+        // 下载 url-loader file-loader
+        loader: "url-loader",
+        options: {
+          // 图片大小小于 8kb，就会被 base64 处理
+          // 优点: 减少请求数量（减轻服务器压力）
+          // 缺点：图片体积会更大（文件请求速度更慢）
+          limit: 8 * 1024,
+          // 问题：因为 url-loader 默认使用 es6 模块化解析，而 html-loader 引入图片是 commonjs
+          // 解析时会出问题：[object Module]
+          // 解决：关闭 url-loader 的 es6 模块化，使用 commonjs 解析 esModule: false,
+          // 给图片进行重命名
+          // [hash:10]取图片的 hash 的前 10 位
+          // [ext]取文件原来扩展名
+          name: "[hash:10].[ext]",
+        },
+      },
+      {
+        test: /\.html$/,
+        // 处理 html 文件的 img 图片（负责引入 img，从而能被 url-loader 进行处理）
+        loader: "html-loader",
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
+  mode: "development",
+};
+```
+
+##### 3.4.4 运行指令：
+
+```
+npm run start
+```
+
+#### 3.5 打包其他资源
+
+##### 3.5.1 创建文件
+
+eot，svg，tff，woff
+
+##### 3.5.2 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      // 打包其他资源(除了 html/js/css 资源以外的资源)
+      {
+        // 排除 css/js/html 资源
+        exclude: /\.(css|js|html|less)$/,
+        loader: "file-loader",
+        options: {
+          name: "[hash:10].[ext]",
+        },
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
+  mode: "development",
+};
+```
+
+##### 3.5.4 运行指令：
+
+```
+npm run start
+```
+
+#### 3.6 devserver
+
+##### 3.6.1 创建文件
+
+无
+
+##### 3.6.2 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      // 打包其他资源(除了 html/js/css 资源以外的资源)
+      {
+        // 排除 css/js/html 资源
+        exclude: /\.(css|js|html|less)$/,
+        loader: "file-loader",
+        options: {
+          name: "[hash:10].[ext]",
+        },
+      },
+    ],
+  },
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  mode: "development",
+  devServer: {
+    // 项目构建后路径
+    contentBase: resolve(__dirname, "build"),
+    // 启动 gzip 压缩
+    compress: true,
+    // 端口号
+    port: 3000,
+    // 自动打开浏览器
+    open: true,
+  },
+};
+```
+
+##### 3.6.3 运行指令：
+
+```
+npm run start
+```
+
+#### 3.7 开发环境配置
+
+##### 3.7.1 创建文件
+
+##### 3.7.2 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: "./src/js/index.js",
+  output: {
+    filename: "js/built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      // loader 的配置
+      {
+        // 处理 less 资源
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"],
+      },
+      {
+        // 处理 css 资源
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        // 处理图片资源
+        test: /\.(jpg|png|gif)$/,
+        loader: "url-loader",
+        options: {
+          limit: 8 * 1024,
+          name: "[hash:10].[ext]",
+          // 关闭 es6 模块化
+          esModule: false,
+          outputPath: "imgs",
+        },
+      },
+      {
+        // 处理 html 中 img 资源
+        test: /\.html$/,
+        loader: "html-loader",
+      },
+      {
+        // 处理其他资源
+        exclude: /\.(html|js|css|less|jpg|png|gif)/,
+        loader: "file-loader",
+        options: {
+          name: "[hash:10].[ext]",
+          outputPath: "media",
+        },
+      },
+    ],
+  },
+  plugins: [
+    // plugins 的配置
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
+  mode: "development",
+  devServer: {
+    contentBase: resolve(__dirname, "build"),
+    compress: true,
+    port: 3000,
+    open: true,
+  },
+};
+```
+
+##### 3.7.3 运行指令：
+
+```
+npm run start
+```
+
+
+
+### 4、webpack 生产环境的基本配置
+
+#### 4.1 提取css成单独文件
+
+##### 4.1.1 下载安装包
+
+##### 4.1.2 下载插件
+
+```
+npm install --save-dev mini-css-extract-plugin
+```
+
+##### 4.1.3 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+module.exports = {
+  entry: "./src/js/index.js",
+  output: {
+    filename: "js/built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          // 创建 style 标签，将样式放入
+          // 'style-loader',
+          // 这个 loader 取代 style-loader。作用：提取 js 中的 css 成单独文件
+          MiniCssExtractPlugin.loader,
+          // 将 css 文件整合到 js 文件中 'css-loader'
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      // 对输出的 css 文件进行重命名
+      filename: "css/built.css",
+    }),
+  ],
+  mode: "development",
+};
+
+```
+
+##### 4.1.4 运行指令：
+
+```
+npm run start
+```
+
+#### 4.2 css兼容性处理
+
+##### 4.2.1创建文件
+
+##### 4.2.2 下载loader
+
+```
+npm install --save-dev postcss-loader postcss-preset-env
+```
+
+##### 4.2.3 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// 设置 nodejs 环境变量
+// process.env.NODE_ENV = 'development';
+module.exports = {
+  entry: "./src/js/index.js",
+  output: {
+    filename: "js/built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [
+                // postcss 的插件
+                require("postcss-preset-env")(),
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
+    new MiniCssExtractPlugin({ filename: "css/built.css" }),
+  ],
+  mode: "development",
+};
+
+```
+
+##### 4.2.4 添加.browserslistrc文件
+
+```
+[production]
+> 1%
+ie 10
+
+[development]
+last 1 chrome version
+last 1 firefox version
+```
+
+##### 4.2.5 运行指令
+
+```
+npm run start
+```
+
+#### 4.3 压缩css
+
+##### 4.3.1创建文件
+
+##### 4.3.2 下载安装包
+
+```
+npm install --save-dev optimize-css-assets-webpack-plugin 
+```
+
+##### 4.3.3 修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+// 设置 nodejs 环境变量
+// process.env.NODE_ENV = 'development';
+module.exports = {
+  entry: "./src/js/index.js",
+  output: {
+    filename: "js/built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [
+                // postcss 的插件
+                require("postcss-preset-env")(),
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
+    new MiniCssExtractPlugin({ filename: "css/built.css" }),
+    // 压缩 css
+    new OptimizeCssAssetsWebpackPlugin(),
+  ],
+  mode: "development",
+};
+
+```
+
+##### 4.3.4 运行指令
+
+```
+npm run start
+```
+
+#### 4.4js语法检查
+
+##### 4.4.1创建文件
+
+##### 4.4.2 下载安装包
+
+```
+npm install --save-dev eslint-loader eslint eslint-config-airbnb-base eslint-plugin-import
+```
+
+##### 4.4.3修改配置文件
+
+```
+const { resolve } = require('path'); 
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+// 设置 nodejs 环境变量 
+// process.env.NODE_ENV = 'development'; 
+module.exports = {
+    entry: './src/js/index.js', output: { filename: 'js/built.js', path: resolve(__dirname, 'build') }, module: {
+        rules: [ 
+            /*语法检查： eslint-loader eslint 注意：只检查自己写的源代码，第三方的库是不用检查的 设置检查规则： package.json 中 eslintConfig 中设置~ 
+            "eslintConfig": { "extends": "airbnb-base" } airbnb --> eslint-config-airbnb-base eslint-plugin-import eslint */
+            {
+            test: /\.js$/, exclude: /node_modules/, 
+            loader: 'eslint-loader', 
+            options: {
+                // 自动修复 eslint 的错误 
+                fix: true
+            }
+        }]
+    }, 
+    plugins: [
+        new HtmlWebpackPlugin({ template: './src/index.html' }), 
+        new MiniCssExtractPlugin({ filename: 'css/built.css'}), 
+        // 压缩 css 
+        new OptimizeCssAssetsWebpackPlugin() 
+    ],
+    mode: 'development' 
+}
+```
+
+##### 4.4.4添加.eslintrc
+
+```
+{
+  "extends": "airbnb"
+}
+```
+
+#### 4.5 js兼容性处理
+
+##### 4.5.1创建文件
+
+##### 4.5.2下载安装包
+
+```
+npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/polyfill core-js
+```
+
+##### 4.5.3修改配置文件
+
+```
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: "./src/js/index.js",
+  output: {
+    filename: "js/built.js",
+    path: resolve(__dirname, "build"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          // 预设：指示
+          babel,
+          //做怎么样的兼容性处理
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                // 按需加载 useBuiltIns: 'usage',
+                // 指定 core-js 版本
+                corejs: {
+                  version: 3,
+                }, // 指定兼容性做到哪个版本浏览器 ]
+                targets: {
+                  chrome: "60",
+                  firefox: "60",
+                  ie: "9",
+                  safari: "10",
+                  edge: "17",
+                },
+              },
+            ],
+          ],
+        },
+      },
+    ],
+  },
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  mode: "development",
+};
+
+```
+
+
+

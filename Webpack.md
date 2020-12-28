@@ -315,8 +315,6 @@ plugins: [
 
 ## js语法检查
 
-> 注：老师采用的是aribnb,不过我采用的代码风格是js- standard-style
-
 安装
 
 ```shell

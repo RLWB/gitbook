@@ -876,6 +876,169 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({ template: &quot;./src/index.html&quot; })],
   mode: &quot;development&quot;,
 };
+</code></pre><h5 id="454-&#x8FD0;&#x884C;&#x6307;&#x4EE4;&#xFF1A;">4.5.4 &#x8FD0;&#x884C;&#x6307;&#x4EE4;&#xFF1A;</h5>
+<pre><code>npm run start
+</code></pre><h4 id="46-js&#x538B;&#x7F29;">4.6 js&#x538B;&#x7F29;</h4>
+<h5 id="461-&#x521B;&#x5EFA;&#x6587;&#x4EF6;">4.6.1 &#x521B;&#x5EFA;&#x6587;&#x4EF6;</h5>
+<h5 id="462-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">4.6.2 &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h5>
+<pre><code>const { resolve } = require(&quot;path&quot;);
+const HtmlWebpackPlugin = require(&quot;html-webpack-plugin&quot;);
+module.exports = {
+  entry: &quot;./src/js/index.js&quot;,
+  output: {
+    filename: &quot;js/built.js&quot;,
+    path: resolve(__dirname, &quot;build&quot;),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: &quot;./src/index.html&quot;,
+    }),
+  ],
+  // &#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E0B;&#x4F1A;&#x81EA;&#x52A8;&#x538B;&#x7F29; js &#x4EE3;&#x7801;
+  mode: &quot;production&quot;,
+};
+</code></pre><h5 id="463-&#x8FD0;&#x884C;&#x6307;&#x4EE4;">4.6.3 &#x8FD0;&#x884C;&#x6307;&#x4EE4;</h5>
+<pre><code>npm run start
+</code></pre><h4 id="47-html&#x538B;&#x7F29;">4.7 HTML&#x538B;&#x7F29;</h4>
+<h5 id="471-&#x521B;&#x5EFA;&#x6587;&#x4EF6;">4.7.1 &#x521B;&#x5EFA;&#x6587;&#x4EF6;</h5>
+<h5 id="472-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">4.7.2 &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h5>
+<pre><code>const { resolve } = require(&quot;path&quot;);
+const HtmlWebpackPlugin = require(&quot;html-webpack-plugin&quot;);
+module.exports = {
+  entry: &quot;./src/js/index.js&quot;,
+  output: {
+    filename: &quot;js/built.js&quot;,
+    path: resolve(__dirname, &quot;build&quot;),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: &quot;./src/index.html&quot;,
+      // &#x538B;&#x7F29; html &#x4EE3;&#x7801;
+      minify: {
+        // &#x79FB;&#x9664;&#x7A7A;&#x683C;
+        collapseWhitespace: true,
+        // &#x79FB;&#x9664;&#x6CE8;&#x91CA;
+        removeComments: true,
+      },
+    }),
+  ],
+  mode: &quot;production&quot;,
+};
+</code></pre><h5 id="473-&#x8FD0;&#x884C;&#x6307;&#x4EE4;">4.7.3 &#x8FD0;&#x884C;&#x6307;&#x4EE4;</h5>
+<pre><code>npm run start
+</code></pre><h4 id="48-&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x914D;&#x7F6E;">4.8 &#x751F;&#x4EA7;&#x73AF;&#x5883;&#x914D;&#x7F6E;</h4>
+<h5 id="481-&#x521B;&#x5EFA;&#x6587;&#x4EF6;">4.8.1 &#x521B;&#x5EFA;&#x6587;&#x4EF6;</h5>
+<h5 id="482-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">4.8.2 &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h5>
+<pre><code>const { resolve } = require(&quot;path&quot;);
+const MiniCssExtractPlugin = require(&quot;mini-css-extract-plugin&quot;);
+const OptimizeCssAssetsWebpackPlugin = require(&quot;optimize-css-assets-webpack-plugin&quot;);
+const HtmlWebpackPlugin = require(&quot;html-webpack-plugin&quot;);
+// &#x5B9A;&#x4E49; nodejs &#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF1A;&#x51B3;&#x5B9A;&#x4F7F;&#x7528; browserslist &#x7684;&#x54EA;&#x4E2A;&#x73AF;&#x5883;
+process.env.NODE_ENV = &quot;production&quot;;
+// &#x590D;&#x7528; loader
+const commonCssLoader = [
+  MiniCssExtractPlugin.loader,
+  &quot;css-loader&quot;,
+  {
+    // &#x8FD8;&#x9700;&#x8981;&#x5728; package.json &#x4E2D;&#x5B9A;&#x4E49; browserslist
+    loader: &quot;postcss-loader&quot;,
+    options: {
+      ident: &quot;postcss&quot;,
+      plugins: () =&gt; [require(&quot;postcss-preset-env&quot;)()],
+    },
+  },
+];
+module.exports = {
+  entry: &quot;./src/js/index.js&quot;,
+  output: {
+    filename: &quot;js/built.js&quot;,
+    path: resolve(__dirname, &quot;build&quot;),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [...commonCssLoader],
+      },
+      {
+        test: /\.less$/,
+        use: [...commonCssLoader, &quot;less-loader&quot;],
+      },
+      /*&#x6B63;&#x5E38;&#x6765;&#x8BB2;&#xFF0C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EA;&#x80FD;&#x88AB;&#x4E00;&#x4E2A; loader &#x5904;&#x7406;&#x3002;
+&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8981;&#x88AB;&#x591A;&#x4E2A; loader &#x5904;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x5B9A;&#x8981;&#x6307;&#x5B9A; loader &#x6267;&#x884C;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#xFF1A;
+&#x5148;&#x6267;&#x884C; eslint &#x5728;&#x6267;&#x884C; babel
+*/
+      {
+        // &#x5728; package.json &#x4E2D; eslintConfig --&gt; airbnb
+        test: /\.js$/,
+        exclude: /node_modules/,
+        // &#x4F18;&#x5148;&#x6267;&#x884C;
+        enforce: &quot;pre&quot;,
+        loader: &quot;eslint-loader&quot;,
+        options: {
+          fix: true,
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: &quot;babel-loader&quot;,
+        options: {
+          presets: [
+            [
+              &quot;@babel/preset-env&quot;,
+              {
+                useBuiltIns: &quot;usage&quot;,
+                corejs: { version: 3 },
+                targets: {
+                  chrome: &quot;60&quot;,
+                  firefox: &quot;50&quot;,
+                },
+              },
+            ],
+          ],
+        },
+      },
+      {
+        test: /\.(jpg|png|gif)/,
+        loader: &quot;url-loader&quot;,
+        options: {
+          limit: 8 * 1024,
+          name: &quot;[hash:10].[ext]&quot;,
+          outputPath: &quot;imgs&quot;,
+          esModule: false,
+        },
+      },
+      {
+        test: /\.html$/,
+        loader: &quot;html-loader&quot;,
+      },
+      {
+        exclude: /\.(js|css|less|html|jpg|png|gif)/,
+        loader: &quot;file-loader&quot;,
+        options: {
+          outputPath: &quot;media&quot;,
+        },
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: &quot;css/built.css&quot;,
+    }),
+    new OptimizeCssAssetsWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: &quot;./src/index.html&quot;,
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+    }),
+  ],
+  mode: &quot;production&quot;,
+};
+</code></pre><h5 id="484-&#x8FD0;&#x884C;&#x6307;&#x4EE4;">4.8.4 &#x8FD0;&#x884C;&#x6307;&#x4EE4;</h5>
+<pre><code>npm run start
 </code></pre>
                                 
                                 </section>
@@ -915,7 +1078,7 @@ module.exports = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"webpack教程","level":"1.6","depth":1,"next":{"title":"每日一题","level":"1.7","depth":1,"ref":"","articles":[{"title":"前端性能优化","level":"1.7.1","depth":2,"path":"每日一题/20201126.md","ref":"每日一题/20201126.md","articles":[]},{"title":"合集","level":"1.7.2","depth":2,"path":"每日一题/20201127.md","ref":"每日一题/20201127.md","articles":[]},{"title":"合集 02","level":"1.7.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]}]},"previous":{"title":"git 教程","level":"1.5","depth":1,"path":"GIT.md","ref":"GIT.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Webpacks.md","mtime":"2020-12-28T15:40:17.155Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-28T15:40:40.572Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"webpack教程","level":"1.6","depth":1,"next":{"title":"每日一题","level":"1.7","depth":1,"ref":"","articles":[{"title":"前端性能优化","level":"1.7.1","depth":2,"path":"每日一题/20201126.md","ref":"每日一题/20201126.md","articles":[]},{"title":"合集","level":"1.7.2","depth":2,"path":"每日一题/20201127.md","ref":"每日一题/20201127.md","articles":[]},{"title":"合集 02","level":"1.7.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]}]},"previous":{"title":"git 教程","level":"1.5","depth":1,"path":"GIT.md","ref":"GIT.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Webpacks.md","mtime":"2020-12-29T17:44:09.369Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-29T17:44:47.170Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

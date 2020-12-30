@@ -597,11 +597,13 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              ident: "postcss",
-              plugins: () => [
-                // postcss 的插件
-                require("postcss-preset-env")(),
-              ],
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env"
+                  ],
+                ],
+              },
             },
           },
         ],

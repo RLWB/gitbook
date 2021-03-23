@@ -143,3 +143,22 @@ Vue.component('self-component', {
 
 #### 局部注册组件
 
+全局注册往往是不够理想的。比如，如果你使用一个像 webpack 这样的构建系统，全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会被包含在你最终的构建结果中。这造成了用户下载的 JavaScript 的无谓的增加。
+
+```html
+ var componentA = {
+            template: '<h1>componentA</h1>'
+        }
+```
+
+然后在 `components` 选项中定义你想要使用的组件：
+
+```javascript
+new Vue({
+            el: '#app',
+            components: {
+                componentA
+            }
+        })
+```
+

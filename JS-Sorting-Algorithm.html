@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ES6复习 · GitBook</title>
+        <title>JS十大排序算法 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Vue.html" />
+    <link rel="next" href="webpack5.html" />
     
-    
-    <link rel="prev" href="每日一题/20201128.html" />
     
 
     </head>
@@ -229,7 +227,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="ES6.html">
+        <li class="chapter " data-level="1.8" data-path="ES6.html">
             
                 <a href="ES6.html">
             
@@ -295,7 +293,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.1" data-path="JS-Sorting-Algorithm.html">
+        <li class="chapter active" data-level="1.12.1" data-path="JS-Sorting-Algorithm.html">
             
                 <a href="JS-Sorting-Algorithm.html">
             
@@ -356,7 +354,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >ES6复习</a>
+        <a href="." >JS十大排序算法</a>
     </h1>
 </div>
 
@@ -371,18 +369,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="es6&#x77E5;&#x8BC6;&#x70B9;">ES6&#x77E5;&#x8BC6;&#x70B9;</h2>
+                                <h2 id="&#x5341;&#x5927;&#x7ECF;&#x5178;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;">&#x5341;&#x5927;&#x7ECF;&#x5178;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</h2>
 <blockquote>
-<p>ECMAScript 6.0&#xFF08;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0; ES6&#xFF09;&#x662F; JavaScript &#x8BED;&#x8A00;&#x7684;&#x4E0B;&#x4E00;&#x4EE3;&#x6807;&#x51C6;&#xFF0C;&#x5DF2;&#x7ECF;&#x5728; 2015 &#x5E74; 6 &#x6708;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#x4E86;&#x3002;&#x5B83;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x662F;&#x4F7F;&#x5F97; JavaScript &#x8BED;&#x8A00;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7F16;&#x5199;&#x590D;&#x6742;&#x7684;&#x5927;&#x578B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x6210;&#x4E3A;&#x4F01;&#x4E1A;&#x7EA7;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x3002;</p>
+<p>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x662F; &#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5; &#x4E2D;&#x6700;&#x57FA;&#x672C;&#x7684;&#x7B97;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x5185;&#x90E8;&#x6392;&#x5E8F;&#x548C;&#x5916;&#x90E8;&#x6392;&#x5E8F;&#xFF0C;&#x5185;&#x90E8;&#x6392;&#x5E8F;&#x662F;&#x6839;&#x636E;&#x8BB0;&#x5F55;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x800C;&#x5916;&#x90E8;&#x6392;&#x5E8F;&#x662F;&#x56E0;&#x6392;&#x5E8F;&#x6570;&#x636E;&#x5F88;&#x5927;&#xFF0C;&#x4E00;&#x6B21;&#x4E0D;&#x80FD;&#x5BB9;&#x7EB3;&#x5168;&#x90E8;&#x6392;&#x5E8F;&#x8BB0;&#x5F55;&#xFF0C;&#x5728;&#x6392;&#x5E8F;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5916;&#x5B58;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF0C;&#x5806;&#x6392;&#x5E8F;&#xFF0C;&#x57FA;&#x6570;&#x6392;&#x5E8F;&#x7B49;&#x3002;&#x7528;&#x4E00;&#x5F20;&#x56FE;&#x6982;&#x62EC;&#xFF1A;</p>
 </blockquote>
-<h3 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h3>
-<h4 id="ecmascript-&#x548C;-javascript&#x7684;&#x5173;&#x7CFB;">ECMAScript &#x548C; JavaScript&#x7684;&#x5173;&#x7CFB;</h4>
-<p>ECMAScript &#x548C; JavaScript &#x7684;&#x5173;&#x7CFB;&#x662F;&#xFF0C;&#x524D;&#x8005;&#x662F;&#x540E;&#x8005;&#x7684;&#x89C4;&#x683C;&#xFF0C;&#x540E;&#x8005;&#x662F;&#x524D;&#x8005;&#x7684;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#xFF08;&#x53E6;&#x5916;&#x7684; ECMAScript &#x65B9;&#x8A00;&#x8FD8;&#x6709; JScript &#x548C; ActionScript&#xFF09;&#x3002;&#x65E5;&#x5E38;&#x573A;&#x5408;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x8BCD;&#x662F;&#x53EF;&#x4EE5;&#x4E92;&#x6362;&#x7684;&#x3002;</p>
-<h4 id="es6-&#x4E0E;-ecmascript-2015-&#x7684;&#x5173;&#x7CFB;">ES6 &#x4E0E; ECMAScript 2015 &#x7684;&#x5173;&#x7CFB;</h4>
-<p>ES6 &#x65E2;&#x662F;&#x4E00;&#x4E2A;&#x5386;&#x53F2;&#x540D;&#x8BCD;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x6CDB;&#x6307;&#xFF0C;&#x542B;&#x4E49;&#x662F; 5.1 &#x7248;&#x4EE5;&#x540E;&#x7684; JavaScript &#x7684;&#x4E0B;&#x4E00;&#x4EE3;&#x6807;&#x51C6;&#xFF0C;&#x6DB5;&#x76D6;&#x4E86; ES2015&#x3001;ES2016&#x3001;ES2017 &#x7B49;&#x7B49;&#xFF0C;&#x800C; ES2015 &#x5219;&#x662F;&#x6B63;&#x5F0F;&#x540D;&#x79F0;&#xFF0C;&#x7279;&#x6307;&#x8BE5;&#x5E74;&#x53D1;&#x5E03;&#x7684;&#x6B63;&#x5F0F;&#x7248;&#x672C;&#x7684;&#x8BED;&#x8A00;&#x6807;&#x51C6;&#x3002;&#x672C;&#x4E66;&#x4E2D;&#x63D0;&#x5230; ES6 &#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x6307; ES2015 &#x6807;&#x51C6;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x4E5F;&#x662F;&#x6CDB;&#x6307;&#x201C;&#x4E0B;&#x4E00;&#x4EE3; JavaScript &#x8BED;&#x8A00;&#x201D;&#x3002;</p>
-<h4 id="babel-&#x8F6C;&#x7801;&#x5668;">Babel &#x8F6C;&#x7801;&#x5668;</h4>
-<p>&#x4F7F;&#x7528;ES6&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8003;&#x8651;&#x8001;&#x7248;&#x672C;&#x6D4F;&#x89C8;&#x5668;&#x7684; &#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x7684;&#x9879;&#x76EE;&#x6253;&#x5305;&#x4E0A;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5BF9;&#x5C06;ES6&#x4EE3;&#x7801;&#x8F6C;&#x8BD1;&#x4E3A;ES5&#x6216;&#x8005;ES3&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x4F1A;&#x4F7F;&#x7528;Babel&#x8F6C;&#x7801;&#x5668;&#x63D2;&#x4EF6;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;vue&#x811A;&#x624B;&#x67B6;&#x6216;&#x8005;webpack&#x53BB;&#x642D;&#x5EFA;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x6027;&#x7684;&#x53BB;&#x914D;&#x7F6E;babel&#x63D2;&#x4EF6;&#x3002;</p>
-<h3 id="&#x4E00;&#x3001;let&#x548C;const&#x547D;&#x4EE4;">&#x4E00;&#x3001;let&#x548C;const&#x547D;&#x4EE4;</h3>
+<p><img src="https://github.com/hustcc/JS-Sorting-Algorithm/raw/master/res/sort.png" alt=""></p>
 
                                 
                                 </section>
@@ -410,12 +402,8 @@
 
             
                 
-                <a href="每日一题/20201128.html" class="navigation navigation-prev " aria-label="Previous page: 合集 02">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="Vue.html" class="navigation navigation-next " aria-label="Next page: Vue">
+                <a href="webpack5.html" class="navigation navigation-next navigation-unique" aria-label="Next page: webpack5教程">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -426,7 +414,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ES6复习","level":"1.8","depth":1,"next":{"title":"Vue","level":"1.9","depth":1,"path":"Vue.md","ref":"Vue.md","articles":[]},"previous":{"title":"合集 02","level":"1.7.3","depth":2,"path":"每日一题/20201128.md","ref":"每日一题/20201128.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ES6.md","mtime":"2021-07-06T16:53:48.998Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-06T16:54:17.598Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JS十大排序算法","level":"1.12.1","depth":2,"next":{"title":"webpack5教程","level":"1.13","depth":1,"path":"webpack5.md","ref":"webpack5.md","articles":[]},"previous":{"title":"算法","level":"1.12","depth":1,"ref":"","articles":[{"title":"JS十大排序算法","level":"1.12.1","depth":2,"path":"JS-Sorting-Algorithm.md","ref":"JS-Sorting-Algorithm.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JS-Sorting-Algorithm.md","mtime":"2021-07-06T16:53:48.998Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-06T16:54:17.598Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

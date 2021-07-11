@@ -104,6 +104,326 @@ dist
 
 main.js就是第一个webpack bundle,也叫做output
 
+### 5、配置webpack
+
+ 真实工作中，我们需要对webpack进行各种配置，这个时候我们就需要创建webpack.config.js进行配置：
+
+ 创建webpack.config.js
+
+```bash
+touch webpack.config.js
+```
+
+webpack是用js编写的，运行在nodejs环境里。配置文件中我们需要通过module.exports导出配置项，这是nodejs的Common.js规范规定的。
+
+```javascript
+module.exports = {
+  //配置项
+};
+```
+
+在webpack.config.js里面，我们通过设置以下属性，去指定webpack的打包行为：
+
+* 入口
+* 出口
+* loader
+* plugin
+* 代码分割
+
+例如，要去改变打包的入口，我们可以这样做:
+
+```javascript
+const path = require("path");
+
+module.exports = {
+  entry: { index: path.resolve(__dirname, "source", "index.js") }
+};
+```
+
+这样的话，webpack就会寻找source/index.js作为打包的入口文件去加载。同样，要想改变打包的输出文件目录，我们可以这样做：
+
+```javascript
+const path = require("path");
+
+module.exports = {
+  output: {
+    path: path.resolve(__dirname, "build")
+  }
+};
+```
+
+这样的话，webpack就会把bundle输出到build目录，替换默认的dist目录。
+
+### 6、处理HTML
+
+web应用离不开HTML。想要让webpack解析HTML。我们需要用到一个插件，叫做html-webpack-plugin:
+
+```bash
+npm i html-webpack-plugin --save-dev
+```
+
+安装好插件，配置如下：
+
+```javascript
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.html")
+    })
+  ]
+};
+```
+
+上面，我们告诉webpack，从src/index.html去加载HTML模板。
+
+html-webpack-plugin的最终目标是双重的：
+
+* 加载我们的HTML文件
+* 将bundle注入到HTML文件
+
+接下来，我们创建一个简单的HTML在src/index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpack tutorial</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+稍后我们将使用webpack的开发服务器运行这个应用程序。
+
+### 7、webpack的dev server
+
+开头的时候，我们安装了webpack-dev-server。如果没有安装的话，可以安装一下：
+
+```bash
+npm i webpack-dev-server --save-dev
+```
+
+**webpack-dev-server**是一个方便的开发包。配置完成后，我们可以启动本地服务器来为我们的文件提供服务。
+
+要配置**webpack-dev-server**，打开`package.json`并添加一个“启动”脚本：
+
+```json
+  "scripts": {
+    "dev": "webpack --mode development",
+    "start": "webpack serve --open 'Chrome'",
+  },
+```
+
+启动dev-server，运行下面命令：
+
+```bash
+npm start
+```
+
+Chrome浏览器应该会被打开。控制审查元素，可以看到，main.js被注入到我们的index.html页面。
+
+![webpack 开发服务器](https://www.valentinog.com/blog/static/06dee181263809dde67ecf0e4c4d8d01/7a3d6/webpack-dev-server.png)
+
+### 8、使用webpack的loader
+
+loader是第三方扩展可以帮助webpacl处理不同类型的文件。比如常见的loader有处理css样式文件，处理images图片文件和文本文件。
+
+loader的配置基本如下：
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.filename$/,
+        use: ["loader-b", "loader-a"]
+      }
+    ]
+  },
+  //
+};
+```
+
+通过在module对象里，插入rules，去编写loader的配置。
+
+对于作为模块处理的每个文件，使用test，指定要处理的文件，使用use去指定loader：
+
+```javascript
+{
+    test: /\.filename$/,
+    use: ["loader-b", "loader-a"]
+}
+```
+
+test告诉webpack，把符合文件名的文件作为一个模块。use告诉webpack使用对应的loader去解析模块。
+
+### 9、使用css
+
+要在webpack里面使用css，我们需要至少安装两个loader。这里的loader是用来帮助webpack理解如何处理.css文件所必须的。
+
+为了测试，我们先创建css文件src/style.css：
+
+```css
+h1 {
+    color: orange;
+}
+```
+
+在src/index.html添加如下代码：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpack tutorial</title>
+</head>
+<body>
+<h1>Hello webpack!</h1>
+</body>
+</html>
+```
+
+在src/index.js添加如下代码：
+
+```javascript
+import "./style.css";
+console.log("Hello webpack!");
+```
+
+安装如下loader：
+
+```bash
+npm i css-loader style-loader --save-dev
+```
+
+按照下面配置webpack.config.js
+
+```javascript
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.html")
+    })
+  ]
+};
+```
+
+现在，如果您运行，`npm start`您应该会看到加载在 HTML 头部的样式表
+
+![在 webpack 中使用 CSS](https://www.valentinog.com/blog/static/107120eb641df48da9625bf147954004/7a3d6/webpack-css-loader.png)
+
+如果需要单独提取css文件，你可以使用MiniCssExtractPlugin这个插件。
+
+<b>注意webpack loader的顺序很重要：</b>
+
+以下配置是无效的：
+
+```javascript
+//
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["css-loader", "style-loader"]
+      }
+    ]
+  },
+  //
+};
+```
+
+以下配置是有效的：
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  //
+};
+```
+
+**webpack loader从右到左加载，（或从上到下）。**
+
+### 10、使用SASS
+
+要在webpack中使用SASS，我们需要安装适当的loader。
+
+要在webpack中测试SASS，我们首先创建一个简单的样式表src/style.scss:
+
+```scss
+$primary-color: #eee;
+
+body {
+  color: $primary-color;
+}
+```
+
+将SASS文件加载到src/index.js:
+
+```javascript
+import "./style.scss";
+console.log("Hello webpack!");
+```
+
+接下来我们就需要安装对应的loader（以及sass包）
+
+- **sass-loader**用于加载`import`的 SASS 文件
+- 用于将 CSS 文件加载为模块的**css-loader**
+- **style-loader**用于在 DOM 中加载样式表
+
+```bash
+npm i css-loader style-loader sass-loader sass --save-dev
+```
+
+然后将它们配置在`webpack.config.js`
+
+```javascript
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.html")
+    })
+  ]
+};
+```
+
 [https://www.valentinog.com/blog/webpack/]
 
 
